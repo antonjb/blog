@@ -1,21 +1,21 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
 import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from 'gatsby'
+import './style.css'
+import { Link } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <div
+      style={{ width: '60%', minWidth: 300, maxWidth: 900, margin: '0 auto' }}
+    >
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
-        <link
+        {/* <link
           rel="apple-touch-icon"
           sizes="180x180"
           href={`${withPrefix('/')}img/apple-touch-icon.png`}
@@ -46,11 +46,21 @@ const TemplateWrapper = ({ children }) => {
         <meta
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
-        />
+        /> */}
       </Helmet>
-      <Navbar />
+      <header style={{ padding: '1rem' }}>
+        <h1
+          style={{
+            textAlign: 'center',
+            fontWeight: 600,
+          }}
+        >
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            antonball.dev
+          </Link>
+        </h1>
+      </header>
       <div>{children}</div>
-      <Footer />
     </div>
   )
 }
