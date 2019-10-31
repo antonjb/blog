@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    title: 'Anton Ball',
+    description: 'Personal site and blog of Anton Ball',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,13 +19,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/img`,
-        name: 'images',
       },
     },
     'gatsby-plugin-sharp',
@@ -55,6 +47,9 @@ module.exports = {
             options: {
               destinationDir: 'static',
             },
+          },
+          {
+            resolve: 'gatsby-remark-embed-gist',
           },
         ],
       },
