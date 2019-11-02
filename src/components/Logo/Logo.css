@@ -1,0 +1,9 @@
+.logo svg {
+  fill: #000;
+  transition: fill 0.1s linear;
+}
+
+.logo:hover svg,
+.logo:focus svg {
+  fill: #f47100;
+}
