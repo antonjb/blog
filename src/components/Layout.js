@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import useSiteMetadata from './SiteMetadata'
 import './style.css'
 import { Link } from 'gatsby'
+import { Logo } from './Logo/Logo'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -52,11 +53,10 @@ const TemplateWrapper = ({ children }) => {
         <h1
           style={{
             textAlign: 'center',
-            fontWeight: 600,
           }}
         >
-          <Link to="/" style={{ textDecoration: 'none' }}>
-            antonball.dev
+          <Link className="logo" to="/">
+            <Logo width={338} height={44} />
           </Link>
         </h1>
       </header>
