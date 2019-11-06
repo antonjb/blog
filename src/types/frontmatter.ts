@@ -1,4 +1,4 @@
 export interface SiteMeta {
-  title: string;
-  description: string;
+    title: string
+    description: string
 }
