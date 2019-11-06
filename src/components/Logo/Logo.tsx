@@ -1,7 +1,13 @@
-import React from 'react'
-import './Logo.css'
+import React from "react";
+import "./Logo.css";
 
-export const Logo = ({ className, width, height }) => (
+interface LogoProps {
+  className?: string;
+  width: number;
+  height: number;
+}
+
+export const Logo: React.FC<LogoProps> = ({ className, width, height }) => (
   <svg
     className={className}
     width={width}
@@ -13,4 +19,4 @@ export const Logo = ({ className, width, height }) => (
     <circle cx="249" cy="36" r="24" />
     <circle cx="297" cy="36" r="15" />
   </svg>
-)
+);
