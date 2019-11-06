@@ -47,6 +47,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.15.3"
+    "@types/lodash": "^4.14.144",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "@types/react-helmet": "^5.0.14",
+    "gatsby-plugin-typescript": "^2.1.15",
+    "prettier": "^1.15.3",
+    "typescript": "^3.6.4"
   }
 }

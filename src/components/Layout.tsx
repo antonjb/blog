@@ -1,15 +1,16 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import useSiteMetadata from './SiteMetadata'
-import './style.css'
-import { Link } from 'gatsby'
-import { Logo } from './Logo/Logo'
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useSiteMetadata } from "../Hooks/UseSiteMetadata";
+import "./style.css";
+import { Link } from "gatsby";
+import { Logo } from "./Logo/Logo";
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+export const Layout: React.FC = ({ children }) => {
+  const { title, description } = useSiteMetadata();
+
   return (
     <div
-      style={{ width: '60%', minWidth: 300, maxWidth: 900, margin: '0 auto' }}
+      style={{ width: "60%", minWidth: 300, maxWidth: 900, margin: "0 auto" }}
     >
       <Helmet>
         <html lang="en" />
@@ -49,10 +50,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         /> */}
       </Helmet>
-      <header style={{ padding: '1rem' }}>
+      <header style={{ padding: "1rem" }}>
         <h1
           style={{
-            textAlign: 'center',
+            textAlign: "center"
           }}
         >
           <Link className="logo" to="/">
@@ -62,7 +63,5 @@ const TemplateWrapper = ({ children }) => {
       </header>
       <div>{children}</div>
     </div>
-  )
-}
-
-export default TemplateWrapper
+  );
+};

@@ -1,24 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { graphql, Link } from "gatsby";
+import { Layout } from "../components/Layout";
+import { Content, HTMLContent, ContentProps } from "../components/Content";
+import { BlogPostInterface } from "../types/blogpost";
 
-export const BlogPostTemplate = ({
+interface BlogPostTemplateProps {
+  content: React.ReactNode;
+  contentComponent: React.FunctionComponent<ContentProps>;
+  description: string;
+  tags: string[];
+  title: string;
+  helmet: React.ReactNode;
+}
+export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
   content,
   contentComponent,
   description,
   tags,
   title,
-  helmet,
+  helmet
 }) => {
-  const PostContent = contentComponent || Content
+  const PostContent = contentComponent || Content;
 
   return (
     <section>
-      {helmet || ''}
+      {helmet || ""}
       <div>
         <h1>{title}</h1>
         <p>{description}</p>
@@ -37,19 +45,11 @@ export const BlogPostTemplate = ({
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-}
-
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+const BlogPost = ({ data }: { data: BlogPostInterface }) => {
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
@@ -70,16 +70,10 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
-  )
-}
+  );
+};
 
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
-
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -94,4 +88,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

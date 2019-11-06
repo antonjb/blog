@@ -4,6 +4,9 @@ module.exports = {
     description: 'Personal site and blog of Anton Ball',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-typescript',
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
