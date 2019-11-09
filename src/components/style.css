@@ -2,13 +2,13 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-  padding: 0;
+    padding: 0;
 }
 
 /* Remove default margin */
@@ -26,37 +26,37 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  list-style: none;
+    list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 1em;
+    margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -64,26 +64,55 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /******************************************/
+:root {
+    --primary-color: #f47100;
+    --secondary-color: #7e57c2;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+        'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    line-height: 1.5;
+}
+
+a {
+    outline: none;
+}
+
+a,
+a:visited {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--secondary-color);
+}
+
+a:focus {
+    text-decoration: underline;
 }
 
 * + * {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
 }
