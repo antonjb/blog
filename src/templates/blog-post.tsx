@@ -5,6 +5,7 @@ import { graphql, Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Content, HTMLContent, ContentProps } from '../components/Content'
 import { BlogPostInterface } from '../types/blogpost'
+import { useSiteMetadata } from '../Hooks/UseSiteMetadata'
 
 interface BlogPostTemplateProps {
     content: React.ReactNode
@@ -50,6 +51,7 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
 
 const BlogPost = ({ data }: { data: BlogPostInterface }) => {
     const { markdownRemark: post } = data
+    const { title } = useSiteMetadata()
 
     return (
         <Layout>
@@ -58,7 +60,7 @@ const BlogPost = ({ data }: { data: BlogPostInterface }) => {
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | Blog">
+                    <Helmet titleTemplate={`%s | ${title}`}>
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta name="description" content={`${post.frontmatter.description}`} />
                     </Helmet>
