@@ -92,6 +92,7 @@ body {
 
 a {
     outline: none;
+    transition: color 0.2s linear;
 }
 
 a,
