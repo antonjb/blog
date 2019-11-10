@@ -49,13 +49,13 @@ export const Layout: React.FC = ({ children }) => {
         /> */}
             </Helmet>
             <header style={{ padding: '1rem' }}>
-                <h1
-                    style={{
-                        textAlign: 'center',
-                    }}
-                >
-                    <Link className="logo" to="/">
-                        <Logo width={338} height={44} />
+                <h1>
+                    <Link
+                        style={{ display: 'block', maxWidth: 338, margin: '0 auto' }}
+                        className="logo"
+                        to="/"
+                    >
+                        <Logo />
                     </Link>
                 </h1>
             </header>

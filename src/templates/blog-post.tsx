@@ -6,6 +6,8 @@ import { Layout } from '../components/Layout'
 import { Content, HTMLContent, ContentProps } from '../components/Content'
 import { BlogPostInterface } from '../types/blogpost'
 import { useSiteMetadata } from '../Hooks/UseSiteMetadata'
+import { PreviewCompatibleImage } from '../components/PreviewCompatibleImage'
+import { FeaturedImage } from '../types/images'
 
 interface BlogPostTemplateProps {
     content: React.ReactNode
@@ -14,6 +16,7 @@ interface BlogPostTemplateProps {
     tags: string[]
     title: string
     helmet: React.ReactNode
+    featuredImage?: FeaturedImage
 }
 export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     content,
@@ -22,6 +25,7 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     tags,
     title,
     helmet,
+    featuredImage,
 }) => {
     const PostContent = contentComponent || Content
 
@@ -29,6 +33,16 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
         <section>
             {helmet || ''}
             <div>
+                {featuredImage && (
+                    <div>
+                        <PreviewCompatibleImage
+                            imageInfo={{
+                                image: featuredImage,
+                                alt: `featured image thumbnail for post ${title}`,
+                            }}
+                        />
+                    </div>
+                )}
                 <h1>{title}</h1>
                 <p>{description}</p>
                 <PostContent content={content} />
@@ -67,6 +81,7 @@ const BlogPost = ({ data }: { data: BlogPostInterface }) => {
                 }
                 tags={post.frontmatter.tags}
                 title={post.frontmatter.title}
+                featuredImage={post.frontmatter.featuredimage}
             />
         </Layout>
     )
@@ -84,6 +99,13 @@ export const pageQuery = graphql`
                 title
                 description
                 tags
+                featuredimage {
+                    childImageSharp {
+                        fluid(maxWidth: 900, quality: 85) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
         }
     }
