@@ -9,6 +9,8 @@ import { useSiteMetadata } from '../Hooks/UseSiteMetadata'
 import { PreviewCompatibleImage } from '../components/PreviewCompatibleImage'
 import { FeaturedImage } from '../types/images'
 
+import 'prismjs/themes/prism-okaidia.css'
+
 interface BlogPostTemplateProps {
     content: React.ReactNode
     contentComponent: React.FunctionComponent<ContentProps>

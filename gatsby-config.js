@@ -52,7 +52,7 @@ module.exports = {
                         },
                     },
                     {
-                        resolve: 'gatsby-remark-embed-gist',
+                        resolve: 'gatsby-remark-prismjs',
                     },
                 ],
             },
@@ -63,6 +63,7 @@ module.exports = {
                 modulePath: `${__dirname}/src/cms/cms.js`,
             },
         },
+        'gatsby-plugin-twitter',
         'gatsby-plugin-netlify', // make sure to keep it last in the array
     ],
 }

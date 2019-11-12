@@ -16,11 +16,45 @@ Personally, I prefer property ordering, where you group CSS properties based on 
 
 Property ordering looks like this:
 
-`gist:antonjb/2dbd4f908222fa8b2fad0d962fd2138f#property-ordered.css`
+```css
+.property-order {
+   position: relative;
+   top: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-grow: 1;
+   align-items: stretch;
+   width: 100%;
+   height: 60vh;
+   background-color: orange;
+   font-size: 0.875rem;
+   overflow-wrap: break-word;
+   padding: 1rem;
+   word-break: break-word;
+   word-wrap: break-word;
+}
+```
 
 With the same code we can order alphabetically:
 
-`gist:antonjb/593bfd97d46b4912394c5743857fbddd#alphabetical-ordered.css`
+```css
+.alphabetical {
+   align-items: stretch;
+   background-color: orange;
+   display: flex;
+   flex-grow: 1;
+   flex-wrap: wrap;
+   font-size: 0.875rem;
+   height: 60vh;
+   overflow-wrap: break-word;
+   padding: 1rem;
+   position: relative;
+   top: 10px;
+   width: 100%;
+   word-break: break-word;
+   word-wrap: break-word;
+}
+```
 
 What does the browser do with these rules? Exactly the same thing, browsers don’t get caught up in discussions like this.
 
@@ -32,9 +66,21 @@ Take the alphabetical example above. Width and height are related properties. At
 
 Another CSS pattern benefiting from property ordering is border. Typically I would like properties in the same order as the shorthand. Clockwise or Top, Right, Bottom, Left. Alphabetical ordering results in border-bottom, border-left, border-right and border-top. Not as useful when you consider how CSS implements the properties.
 
-`gist:antonjb/d3a8786bea2dce837fff243ad7b37038#alphabetical-border.css`
+```css
+.alphabetical-border {
+    border-left: 1px solid orange;
+    border-right: 1px solid orange;
+    border-top: 1px solid orange;
+}
+```
 
-`gist:antonjb/d3a8786bea2dce837fff243ad7b37038#property-border.css`
+```css
+.property-border {
+    border-top: 1px solid orange;
+    border-right: 1px solid orange;
+    border-left: 1px solid orange;
+}
+```
 
 There’s a downside to property order, it’s trickier to remember property ordering. Once you get the hang of it though, it helps you see the relationship between CSS properties and you’ll be glad you did, when debugging and comprehension becomes easier. Linting will be your friend here, a really judgy friend but one you like anyway.
 
