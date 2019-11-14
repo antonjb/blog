@@ -10,6 +10,7 @@ import { PreviewCompatibleImage } from '../components/PreviewCompatibleImage'
 import { FeaturedImage } from '../types/images'
 
 import 'prismjs/themes/prism-okaidia.css'
+import { Tags } from '../components/Tags/Tags'
 
 interface BlogPostTemplateProps {
     content: React.ReactNode
@@ -48,18 +49,7 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
                 <h1>{title}</h1>
                 <p>{description}</p>
                 <PostContent content={content} />
-                {tags && tags.length && (
-                    <div style={{ marginTop: `4rem` }}>
-                        <h4>Tags</h4>
-                        <ul>
-                            {tags.map(tag => (
-                                <li key={tag + `tag`}>
-                                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                )}
+                <Tags tags={tags} />
             </div>
         </section>
     )

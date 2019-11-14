@@ -1,0 +1,22 @@
+.tags {
+    display: flex;
+    list-style: none;
+}
+
+.tags li:not(:last-child) {
+    margin-right: 0.5rem;
+}
+
+.tags li a {
+    display: block;
+    padding: 0.3rem 1rem;
+    background-color: #eee;
+    border-radius: 0.5rem;
+    color: #000;
+    font-size: 0.85rem;
+}
+
+.tags li a:hover {
+    background-color: var(--primary-color);
+    transition: background-color 0.2s linear;
+}
