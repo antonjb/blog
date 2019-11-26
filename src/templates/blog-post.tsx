@@ -1,5 +1,4 @@
 import React from 'react'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import { Layout } from '../components/Layout'
@@ -24,7 +23,6 @@ interface BlogPostTemplateProps {
 export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     content,
     contentComponent,
-    description,
     tags,
     title,
     helmet,
@@ -47,7 +45,6 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
                     </div>
                 )}
                 <h1>{title}</h1>
-                <p>{description}</p>
                 <PostContent content={content} />
                 <Tags tags={tags} />
             </div>
