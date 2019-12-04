@@ -44,8 +44,13 @@ Firefox’s Grid Inspector demonstrates how Subgrid adds the gap between the row
 
 ![Figure 6: Subgrid overriding the parent grids gap property](/img/illustrated-guide/ff-grid-inspector-gap.png)
 
-As of writing only Firefox Developer Edition supports CSS Subgrid but Mozilla announced Subgrid will be released in version 71. Even though the browser support is looking slim right now, it won’t be long until the other browsers implement subgrid too. Keep an eye on [caniuse: Subgrid](https://caniuse.com/#feat=css-subgrid) to see when more browsers start supporting Subgrid.
+So far Firefox 71 is the only browser that supports CSS Subgrid. Even though the browser support is looking slim right now, it won’t be long until the other browsers implement subgrid too. Keep an eye on [caniuse: Subgrid](https://caniuse.com/#feat=css-subgrid) to see when more browsers start supporting Subgrid.
 
 If you’re interested in the code for the examples, then [take a look at the CodePen](https://codepen.io/antonjb/pen/rNNgxWV).
+
+## Resources
+* [CSS Grid Level 2: Here Comes Subgrid by Rachel Andrew](https://www.smashingmagazine.com/2018/07/css-grid-2/)
+* [Grid By Example: CSS Subgrid by Rachel Andrew](https://gridbyexample.com/examples/#css-grid-level-2-examples)
+* [Subgrid by MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Subgrid)
 
 CSS Grid is so powerful that even without support for CSS Subgrid you'll be able to do great things. It's at a point where you can reliably use it in production and it's a great experience. While you might run into little gotchas like this it won't be long until there'll be a solution for those too!
