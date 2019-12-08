@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
-import { FeaturedImage } from '../types/images'
+import PreviewCompatibleImage from '../PreviewCompatibleImage'
+import { FeaturedImage } from '../../types/images'
+import './BlogRoll.css'
 
 const BlogRoll: React.FC<{ data: BlogRollStaticQueryProps }> = ({ data }) => {
     const { edges: posts } = data.allMarkdownRemark
@@ -9,22 +10,22 @@ const BlogRoll: React.FC<{ data: BlogRollStaticQueryProps }> = ({ data }) => {
         <div>
             {posts &&
                 posts.map(({ node: post }) => (
-                    <article key={post.id} style={{ marginBottom: '1rem' }}>
+                    <article className="blog-roll-item" key={post.id}>
                         <header>
-                            {post.frontmatter.featuredimage && (
-                                <div>
+                            <Link to={post.fields.slug}>
+                                {post.frontmatter.featuredimage && (
                                     <PreviewCompatibleImage
                                         imageInfo={{
                                             image: post.frontmatter.featuredimage,
                                             alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                                         }}
                                     />
-                                </div>
-                            )}
+                                )}
+                            </Link>
                             <h2>
                                 <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                             </h2>
-                            <p>{post.frontmatter.date}</p>
+                            <time>{post.frontmatter.date}</time>
                         </header>
                         <p>{post.excerpt}</p>
                         <p>

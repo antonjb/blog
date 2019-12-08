@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../components/Layout'
-import BlogRoll from '../components/BlogRoll'
+import BlogRoll from '../components/BlogRoll/BlogRoll'
 
 const IndexPage: React.FC = () => (
     <Layout>
