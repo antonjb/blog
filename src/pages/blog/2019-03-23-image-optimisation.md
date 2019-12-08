@@ -137,7 +137,7 @@ As much as you can you should automate this process. Automation can be very depe
 
 Earlier I mentioned WEBP is best used in automation. Browsers will send Accept Headers when requesting resources from a server. The header can look similar to this:
 
-```
+```http
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 ```
 
