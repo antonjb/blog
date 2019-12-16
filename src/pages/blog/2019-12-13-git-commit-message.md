@@ -1,7 +1,7 @@
 ---
 templateKey: "blog-post"
 title: "Saving history in Git commit messages"
-date: 2019-12-13T00:00:00.000Z
+date: 2019-12-17T00:00:00.000Z
 featuredpost: true
 description: >-
   How can your Git Commit message save you later?
@@ -10,15 +10,13 @@ tags:
   - tips
 ---
 
-It's highly likely that you're using Git for versioning control in a project you're working on. It often doesn't matter the size of the project, from side project through to large-scale enterprise applications and everything in-between.
-
-When it comes time to commit a feature branch we might not always put the most effort into what that commit message is. It can be the last step in the process and we want to get the code up for review and shipped after all.
+No matter the size of your project, be it side project or large-scale enterprise application, it's highly likely you're using Git for version control. When it comes time to commit our feature branch we don't always put the most effort into the commit message. It can be the last step in the process and we want to get the code up for review and shipped.
 
 Take a look at this commit message to my blog:
 
 > Adds JSON React Layouts article
 
-I get an idea of what I did, there's just no detail as to why. Conversely, this commit when I converted a page to TypeScript and added semantic meaning to the pages:
+You get an idea of what I did, there's just no detail as to why. Conversely, the below commit message, when I converted a page to TypeScript and added semantic meaning to the pages, gives you an idea of the what but importantly also why:
 
 > Converted page to TypeScript, improved semantic meaning
 >
@@ -44,15 +42,15 @@ A standard, though not enforced, is 50 characters for the title and around 72 ch
 
 Why is this structure useful to commit messages?
 
-## Retaining history
-With a short summary used, it's not always clear why we took that action. You have no doubt experienced this upon returning to old code sometimes months (sometimes minutes...) later and not understanding why it's like this.
-
-You can't rely on tickets remaining. If you add a ticket number to the message, there's no guarantee it'll be there later. Project's change systems, you change the way tickets are numbered and they become difficult to track down, relying on another source for your information.
-
 ## Quicker Pull Request creation
 When using a UI for pull requests, such as GitHub or BitBucket, they understand this format and will automatically take the summary and use that as the title and body. You then don't have to spend time writing information. I'll typically add detail that isn't necessary for the commit message, such as where you might need your team's help or what file to start reviewing.
 
 ![Figure 1. GitHub's interface automatically populated with the commit message](/img/git-messages/commit.png)
+
+## Retaining history
+With a short summary used, it's not always clear why we took that action. You have no doubt experienced this upon returning to old code sometimes months (sometimes minutes...) later and not understanding why it's like this.
+
+You can't rely on tickets remaining. If you add a ticket number to the message, there's no guarantee it'll be there later. Project's change systems, you change the way tickets are numbered and they become difficult to track down, relying on another source for your information.
 
 Here's the git commands to start adding more detail so you can thank yourself later:
 
