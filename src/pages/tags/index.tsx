@@ -4,8 +4,9 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../../components/Layout'
 import { SiteMeta } from '../../types/frontmatter'
+import { GatsbyPage } from '../../types/page'
 
-interface TagsPageProps {
+interface TagsPageProps extends GatsbyPage {
     data: {
         allMarkdownRemark: {
             group: {
@@ -14,41 +15,43 @@ interface TagsPageProps {
             }[]
         }
         site: {
-            siteMetadata: Pick<SiteMeta, 'title'>
+            siteMetadata: Pick<SiteMeta, 'title' | 'siteUrl'>
         }
     }
 }
 
 const TagsPage: React.FC<TagsPageProps> = ({
+    location,
     data: {
         allMarkdownRemark: { group },
         site: {
-            siteMetadata: { title },
+            siteMetadata: { title, siteUrl },
         },
     },
-}) => (
-    <Layout>
-        <section className="section">
-            <Helmet title={`Tags | ${title}`} />
-            <div className="container content">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1" style={{ marginBottom: '6rem' }}>
-                        <h1 className="title is-size-2 is-bold-light">Tags</h1>
-                        <ul className="taglist">
-                            {group.map(tag => (
-                                <li key={tag.fieldValue}>
-                                    <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                                        {tag.fieldValue} ({tag.totalCount})
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </Layout>
-)
+}) => {
+    const canonicalUrl = `${siteUrl}${location.pathname}`
+
+    return (
+        <Layout>
+            <section>
+                <Helmet title={`Tags | ${title}`}>
+                    <link rel="canonical" href={canonicalUrl} />
+                    <meta property="og:url" content={canonicalUrl} />
+                </Helmet>
+                <h1>Tags</h1>
+                <ul>
+                    {group.map(tag => (
+                        <li key={tag.fieldValue}>
+                            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                                {tag.fieldValue} ({tag.totalCount})
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        </Layout>
+    )
+}
 
 export default TagsPage
 
@@ -57,6 +60,7 @@ export const tagPageQuery = graphql`
         site {
             siteMetadata {
                 title
+                siteUrl
             }
         }
         allMarkdownRemark(limit: 1000) {

@@ -2,6 +2,7 @@ module.exports = {
     siteMetadata: {
         title: 'Anton Ball',
         description: 'Personal site and blog of Anton Ball',
+        siteUrl: 'https://www.antonball.dev/',
     },
     plugins: [
         {

@@ -54,7 +54,8 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
 
 const BlogPost = ({ data }: { data: BlogPostInterface }) => {
     const { markdownRemark: post } = data
-    const { title } = useSiteMetadata()
+    const { title, siteUrl } = useSiteMetadata()
+    const canonicalUrl = `${siteUrl}${post.fields.slug}`
 
     return (
         <Layout>
@@ -66,6 +67,8 @@ const BlogPost = ({ data }: { data: BlogPostInterface }) => {
                     <Helmet titleTemplate={`%s | ${title}`}>
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta name="description" content={`${post.frontmatter.description}`} />
+                        <link rel="canonical" href={canonicalUrl} />
+                        <meta property="og:url" content={canonicalUrl} />
                     </Helmet>
                 }
                 tags={post.frontmatter.tags}
@@ -83,6 +86,9 @@ export const pageQuery = graphql`
         markdownRemark(id: { eq: $id }) {
             id
             html
+            fields {
+                slug
+            }
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 title
