@@ -3,8 +3,9 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { SiteMeta } from '../types/frontmatter'
+import { GatsbyPage } from '../types/page'
 
-interface TagRouteProps {
+interface TagRouteProps extends GatsbyPage {
     data: {
         allMarkdownRemark: {
             totalCount: number
@@ -22,7 +23,7 @@ interface TagRouteProps {
             ]
         }
         site: {
-            siteMetadata: Pick<SiteMeta, 'title'>
+            siteMetadata: Pick<SiteMeta, 'title' | 'siteUrl'>
         }
     }
     pageContext: {
@@ -32,33 +33,33 @@ interface TagRouteProps {
 
 const TagRoute: React.FC<TagRouteProps> = props => {
     const posts = props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
-        <li key={post.node.fields.slug}>
-            <Link to={post.node.fields.slug}>
-                <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
-            </Link>
-        </li>
-    ))
     const tag = props.pageContext.tag
     const title = props.data.site.siteMetadata.title
     const totalCount = props.data.allMarkdownRemark.totalCount
     const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with “${tag}”`
+    const canonicalUrl = `${props.data.site.siteMetadata.siteUrl}${props.location.pathname}`
 
     return (
         <Layout>
-            <section className="section">
+            <Helmet>
+                <link rel="canonical" href={canonicalUrl} />
+                <meta property="og:url" content={canonicalUrl} />
+            </Helmet>
+            <section>
                 <Helmet title={`${tag} | ${title}`} />
-                <div className="container content">
-                    <div className="columns">
-                        <div className="column is-10 is-offset-1" style={{ marginBottom: '6rem' }}>
-                            <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-                            <ul className="taglist">{postLinks}</ul>
-                            <p>
-                                <Link to="/tags/">Browse all tags</Link>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
+                <ul className="taglist">
+                    {posts.map(post => (
+                        <li key={post.node.fields.slug}>
+                            <Link to={post.node.fields.slug}>
+                                <h2>{post.node.frontmatter.title}</h2>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+                <p>
+                    <Link to="/tags/">Browse all tags</Link>
+                </p>
             </section>
         </Layout>
     )
@@ -71,6 +72,7 @@ export const tagPageQuery = graphql`
         site {
             siteMetadata {
                 title
+                siteUrl
             }
         }
         allMarkdownRemark(

@@ -6,7 +6,7 @@ import { Link, withPrefix } from 'gatsby'
 import { Logo } from './Logo/Logo'
 
 export const Layout: React.FC = ({ children }) => {
-    const { title, description } = useSiteMetadata()
+    const { title, description, siteUrl } = useSiteMetadata()
 
     return (
         <div style={{ width: '60%', minWidth: 300, maxWidth: 900, margin: '0 auto' }}>
@@ -39,10 +39,10 @@ export const Layout: React.FC = ({ children }) => {
                     color="#ff4400"
                 />
                 <meta name="theme-color" content="#f47100" />
+                <meta property="og:url" content={siteUrl} />
 
                 {/* <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
         <meta
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
