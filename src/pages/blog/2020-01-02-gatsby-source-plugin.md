@@ -39,6 +39,8 @@ exports.createSchemaCustomization = ({ actions }) => {
         created: Date
         photo: File
     }
+  `)
+}
 ```
 
 Out of the box, Graphql provides five basic types: String, Int, Float, Boolean and ID. Gatsby extends this with another two types: Date and File.
@@ -78,6 +80,8 @@ exports.createSchemaCustomization = ({ actions }) => {
         created: Date @dateformat
         photo: File
     }
+  `)
+}
 ```
 
 Now the build was succeeding, even when the query returns empty results. The query runs, returning null and the React components handle null properties.
