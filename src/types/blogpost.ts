@@ -9,6 +9,7 @@ export interface BlogPostInterface {
         }
         frontmatter: {
             date: string
+            published: string
             title: string
             description: string
             tags: string[]

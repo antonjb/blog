@@ -62,9 +62,19 @@ const BlogPost = ({ data }: { data: BlogPostInterface }) => {
                 helmet={
                     <Helmet titleTemplate={`%s | ${title}`}>
                         <title>{`${post.frontmatter.title}`}</title>
-                        <meta name="description" content={`${post.frontmatter.description}`} />
+                        <meta name="description" content={post.frontmatter.description} />
                         <link rel="canonical" href={canonicalUrl} />
                         <meta property="og:url" content={canonicalUrl} />
+                        <meta
+                            property="og:title"
+                            content={`${post.frontmatter.title} | ${title}`}
+                        />
+                        <meta property="og:type" content="article" />
+                        <meta
+                            property="article:published_time"
+                            content={post.frontmatter.published}
+                        />
+                        <meta property="article:tag" content={post.frontmatter.tags.join(',')} />
                     </Helmet>
                 }
                 tags={post.frontmatter.tags}
@@ -87,6 +97,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
+                published: date(formatString: "YYYY-MM-DD")
                 title
                 description
                 tags
