@@ -31,24 +31,20 @@ export const BlogPostTemplate: React.FC<BlogPostTemplateProps> = ({
     const PostContent = contentComponent || Content
 
     return (
-        <section>
+        <article>
             {helmet || ''}
-            <div>
-                {featuredImage && (
-                    <div>
-                        <PreviewCompatibleImage
-                            imageInfo={{
-                                image: featuredImage,
-                                alt: `featured image thumbnail for post ${title}`,
-                            }}
-                        />
-                    </div>
-                )}
-                <h1>{title}</h1>
-                <PostContent content={content} />
-                <Tags tags={tags} />
-            </div>
-        </section>
+            {featuredImage && (
+                <PreviewCompatibleImage
+                    imageInfo={{
+                        image: featuredImage,
+                        alt: `featured image thumbnail for post ${title}`,
+                    }}
+                />
+            )}
+            <h1>{title}</h1>
+            <PostContent content={content} />
+            <Tags tags={tags} />
+        </article>
     )
 }
 

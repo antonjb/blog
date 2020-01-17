@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from '../Hooks/UseSiteMetadata'
 import './style.css'
@@ -59,7 +59,7 @@ export const Layout: React.FC = ({ children }) => {
                     </Link>
                 </h1>
             </header>
-            <div>{children}</div>
+            <Fragment>{children}</Fragment>
         </div>
     )
 }

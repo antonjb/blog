@@ -21,8 +21,8 @@ const IndexPage: React.FC = () => {
                         Anton Ball
                     </a>
                 </p>
+                <BlogRoll />
             </main>
-            <BlogRoll />
         </Layout>
     )
 }
