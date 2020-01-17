@@ -40,13 +40,12 @@ export const Layout: React.FC = ({ children }) => {
                 />
                 <meta name="theme-color" content="#f47100" />
                 <meta property="og:url" content={siteUrl} />
-
-                {/* <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta
-          property="og:image"
-          content={`${withPrefix('/')}img/og-image.jpg`}
-        /> */}
+                <meta property="og:title" content={title} />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content={`${withPrefix('/')}img/ogimage.png`} />
+                <meta property="og:image:alt" content="Anton Ball dot dev" />
+                <meta property="twitter:card" content="summary" />
+                <meta property="twitter:creator" content="@antonjb" />
             </Helmet>
             <header style={{ padding: '1rem' }}>
                 <h1>
