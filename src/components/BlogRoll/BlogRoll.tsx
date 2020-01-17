@@ -12,16 +12,16 @@ const BlogRoll: React.FC<{ data: BlogRollStaticQueryProps }> = ({ data }) => {
                 posts.map(({ node: post }) => (
                     <article className="blog-roll-item" key={post.id}>
                         <header>
-                            <Link to={post.fields.slug}>
-                                {post.frontmatter.featuredimage && (
+                            {post.frontmatter.featuredimage && (
+                                <Link to={post.fields.slug}>
                                     <PreviewCompatibleImage
                                         imageInfo={{
                                             image: post.frontmatter.featuredimage,
                                             alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                                         }}
                                     />
-                                )}
-                            </Link>
+                                </Link>
+                            )}
                             <h2>
                                 <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
                             </h2>
