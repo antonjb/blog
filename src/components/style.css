@@ -81,6 +81,7 @@ select {
 :root {
     --primary-color: #f47100;
     --secondary-color: #7e57c2;
+    --space-1: 1rem;
 }
 
 body {
@@ -118,9 +119,22 @@ p {
     margin-bottom: 1.5rem;
 }
 
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+br {
+    margin: 0;
+}
+
 blockquote {
     box-shadow: rgba(0, 0, 0, 0.8) 4px 0 0 0 inset;
     margin-left: 1rem;
     padding-left: 1.5rem;
     font-style: italic;
+}
+
+article li {
+    margin-bottom: 1rem;
 }
