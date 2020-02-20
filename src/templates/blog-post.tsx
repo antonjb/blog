@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Content, HTMLContent, ContentProps } from '../components/Content'
 import { BlogPostInterface } from '../types/blogpost'
