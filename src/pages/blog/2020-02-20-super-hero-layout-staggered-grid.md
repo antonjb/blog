@@ -106,3 +106,7 @@ We still rely on the implicit grid because CSS Grid will fill in the blanks even
 With this base grid we have created we can cover many layouts up to the Bronze Age of comics. There’s plenty of flexibility in CSS Grid. We used grid-template-columns and grid-column and grid-row with span values. Check out [staggered panel](https://codepen.io/antonjb/pen/vMPgBJ) and [staggered rows and panel](https://codepen.io/antonjb/pen/QPRKYN) CodePens and [let me know](https://twitter.com/antonjb) what you think.
 
 This is the start of feeling like superheroes with CSS Grid. In the next article of the Super Hero Layout series, we look at how CSS Subgrid enables us to create interesting and unique layouts. Taking a classic Watchmen layout, with an image spanning grid cells, without splitting the image! Keep a look out for that article soon.
+
+## Posts in the Superhero Layout series
+* [Staggered CSS Grid](/blog/2020-02-20-super-hero-layout-staggered-grid/)
+* [CSS Subgrid](/blog/2020-03-10-super-hero-layout-css-subgrid/)

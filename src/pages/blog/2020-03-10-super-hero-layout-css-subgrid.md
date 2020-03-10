@@ -98,5 +98,5 @@ Remember you can see the CodePens for both the [subgrid spanning panel](https://
 That wraps up the second post in Super Hero Layout with CSS Grid. In the next article we will look at how easily we can overlap elements using CSS Grid to make really interesting and unique layouts.
 
 ## Posts in the Superhero Layout series
-* [Staggered CSS Grid](https://www.antonball.dev/blog/2020-02-20-super-hero-layout-staggered-grid/)
-* CSS Subgrid
+* [Staggered CSS Grid](/blog/2020-02-20-super-hero-layout-staggered-grid/)
+* [CSS Subgrid](/blog/2020-03-10-super-hero-layout-css-subgrid/)
