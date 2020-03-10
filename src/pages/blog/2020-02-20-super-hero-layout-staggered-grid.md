@@ -9,6 +9,7 @@ description: >-
 tags:
   - css
   - grid
+  - super-hero-layout
 ---
 
 Comic books, design and web development have all been enjoyable aspects of my life. Not always in that order, it depends on how debugging is going! I wanted to sink into CSS Grid. I decided to combine these passions and recreate famous comic book layouts. The result? A collection of layouts based on Action Comics, Watchmen through to Spider-man and Saga. Each comic provided creative inspiration for CSS Grid.
