@@ -110,3 +110,4 @@ This is the start of feeling like superheroes with CSS Grid. In the next article
 ## Posts in the Superhero Layout series
 * [Staggered CSS Grid](/blog/2020-02-20-super-hero-layout-staggered-grid/)
 * [CSS Subgrid](/blog/2020-03-10-super-hero-layout-css-subgrid/)
+* [CSS Layering Panels](/blog/2020-05-19-super-hero-layout-layered-panels/)
