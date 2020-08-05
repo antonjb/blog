@@ -127,6 +127,7 @@ That wraps up the third part of Superhero Layouts. You can take a look at the [e
 * [Staggered CSS Grid](/blog/2020-02-20-super-hero-layout-staggered-grid/)
 * [CSS Subgrid](/blog/2020-03-10-super-hero-layout-css-subgrid/)
 * [CSS Layering Panels](/blog/2020-05-19-super-hero-layout-layered-panels/)
+* [CSS Shapes](/blog/2020-08-05-super-hero-layout-css-shapes/)
 
 ## Thanks
 Thanks to [Patima Tantiprasut](https://twitter.com/the_patima), [Corey Ginnivan](https://twitter.com/CoreyGinnivan) and [Dominic Sebastian](https://twitter.com/dominosebastian) for their valuable review feedback on this post.

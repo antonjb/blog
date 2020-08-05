@@ -56,6 +56,19 @@ module.exports = {
                         },
                     },
                     {
+                        resolve: 'gatsby-remark-video',
+                        options: {
+                            width: 600,
+                            height: 'auto',
+                            preload: 'auto',
+                            muted: true,
+                            autoplay: false,
+                            playsinline: true,
+                            controls: true,
+                            loop: false,
+                        },
+                    },
+                    {
                         resolve: 'gatsby-remark-prismjs',
                     },
                 ],
