@@ -3,7 +3,7 @@ templateKey: "blog-post"
 title: "Superhero Layout - CSS Shapes for text"
 date: 2020-09-19T00:00:00.000Z
 featuredpost: true
-featuredimage: /img/shl-text-shapes/hero.png
+featuredimage: /img/shl-text-shapes/text-shapes-hero.png
 description: >-
   Combining CSS Grid and CSS Shapes to recreate a unique layout based on a comic book.
 tags:
