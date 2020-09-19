@@ -1,6 +1,6 @@
 ---
 templateKey: "blog-post"
-title: "Super Hero Layout - Combining CSS Grid and CSS Shapes"
+title: "Superhero Layout - Combining CSS Grid and CSS Shapes"
 date: 2020-08-05T00:00:00.000Z
 featuredpost: true
 featuredimage: /img/shl-shapes/shapes-hero.png
@@ -172,6 +172,7 @@ Posts in the Superhero Layout series
 * [CSS Subgrid](/blog/2020-03-10-super-hero-layout-css-subgrid/)
 * [CSS Layering Panels](/blog/2020-05-19-super-hero-layout-layered-panels/)
 * [CSS Shapes](/blog/2020-08-05-super-hero-layout-css-shapes/)
+* [CSS Text Shapes](/blog/2020-09-19-superhero-layout-css-text-shapes/)
 
 ## Thanks
 Thanks to [Mandy Michael](https://twitter.com/mandy_kerr) for [the post on perspective layout](https://medium.com/javascript-in-plain-english/creating-3d-layout-with-css-using-grid-perspective-65cd03dfc56c) and reviewing this post. Appreciate it.
