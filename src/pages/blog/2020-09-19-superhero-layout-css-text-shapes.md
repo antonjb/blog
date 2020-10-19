@@ -99,3 +99,4 @@ Have a play with CSS Shapes in your layouts and see what you can come up with! I
 * [CSS Layering Panels](/blog/2020-05-19-super-hero-layout-layered-panels/)
 * [CSS Shapes](/blog/2020-08-05-super-hero-layout-css-shapes/)
 * [CSS Text Shapes](/blog/2020-09-19-superhero-layout-css-text-shapes/)
+* [CSS internationalisation](/blog/2020-10-19-superhero-layout-internationalisation/)

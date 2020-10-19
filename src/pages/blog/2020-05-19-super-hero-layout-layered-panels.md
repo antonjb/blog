@@ -129,6 +129,7 @@ That wraps up the third part of Superhero Layouts. You can take a look at the [e
 * [CSS Layering Panels](/blog/2020-05-19-super-hero-layout-layered-panels/)
 * [CSS Shapes](/blog/2020-08-05-super-hero-layout-css-shapes/)
 * [CSS Text Shapes](/blog/2020-09-19-superhero-layout-css-text-shapes/)
+* [CSS internationalisation](/blog/2020-10-19-superhero-layout-internationalisation/)
 
 ## Thanks
 Thanks to [Patima Tantiprasut](https://twitter.com/the_patima), [Corey Ginnivan](https://twitter.com/CoreyGinnivan) and [Dominic Sebastian](https://twitter.com/dominosebastian) for their valuable review feedback on this post.
