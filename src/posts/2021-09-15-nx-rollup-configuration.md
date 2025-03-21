@@ -1,8 +1,6 @@
 ---
-templateKey: "blog-post"
 title: "Extending Rollup configuration for NX"
 date: 2021-09-15T00:00:00.000Z
-featuredpost: true
 description: >-
   Fixing an error when using Nx to bundle a React library with SVG
 tags:

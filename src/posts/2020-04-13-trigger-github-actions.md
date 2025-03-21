@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Trigger GitHub actions with Azure DevOps Pipelines"
 date: 2020-04-13T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/github-actions-azure/github-azure-hero.png
+heroImage: ../assets/github-actions-azure/github-azure-hero.png
 description: >-
   Learn how to trigger GitHub Actions from within your Azure DevOps pipeline using GitHub’s repository dispatch event and Azure’s invoke REST API action.
 tags:
@@ -37,7 +35,7 @@ DDDPerth’s build pipelines are in Azure DevOps but if you’re able to call a 
 Navigate to your build tasks and, if you don’t yet have an agentless job, you’ll need to add one.
 Select the three dots and choose “Add an agentless job”.
 
-![Azure DevOps task interface. Drop down menu showing three options. The last being Add an agentless job](/img/github-actions-azure/github-azure-001.png)
+![Azure DevOps task interface. Drop down menu showing three options. The last being Add an agentless job](../assets/github-actions-azure/github-azure-001.png)
 
 Add a task to your agentless job, choosing “Invoke REST API”.
 
@@ -48,7 +46,7 @@ The account that has at least write access to the repository is the username. Th
 
 The remaining settings set the method to POST, the content-type header as application/json and the body to have the required event\_type parameter.
 
-![Invoke REST API interface showing DDDPerth's setup for calling GitHub dispatch event endpoint](/img/github-actions-azure/github-azure-002.png)
+![Invoke REST API interface showing DDDPerth's setup for calling GitHub dispatch event endpoint](../assets/github-actions-azure/github-azure-002.png)
 
 With this task in your pipeline it will now trigger the GitHub action each time the task runs. In the case of DDDPerth that means Lighthouse-ci tests are run during each deployment.
 

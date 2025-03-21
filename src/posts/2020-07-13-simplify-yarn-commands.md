@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Simplifying Yarn Start Commands"
 date: 2020-07-13T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/yarn-start.jpg
+heroImage: ../assets/yarn-start.jpg
 description: >-
   We wanted our projects to be quick to install and begin development. The goal was to need nothing more than running yarn and yarn start. Here’s how we simplified starting our mono repo using a couple of open source tools.
 tags:

@@ -1,8 +1,6 @@
 ---
-templateKey: "blog-post"
 title: "TypeScript Tidbit: Const enums"
 date: 2019-01-23T00:00:00.000Z
-featuredpost: true
 description: >-
   TypeScript Tidbit const enums and how to use them
 tags:

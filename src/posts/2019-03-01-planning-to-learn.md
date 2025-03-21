@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Planning to Learn"
 date: 2019-03-01T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/planning-to-learn.png
+heroImage: ../assets/planning-to-learn.png
 description: >-
   Learning new skills can be a difficult, daunting task. Especially knowing where to start when you haven’t ventured into a topic before. How do you normally begin the learning process? Do you Google…
 tags:

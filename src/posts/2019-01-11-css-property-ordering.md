@@ -1,7 +1,7 @@
 ---
 title: "CSS Property Ordering"
 date: 2019-01-11T00:00:00.000Z
-featuredimage: /img/property-order.jpg
+heroImage: ../assets/property-order.jpg
 description: >-
   Does CSS property ordering matter?
 tags:

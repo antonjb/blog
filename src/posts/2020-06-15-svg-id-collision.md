@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Fix duplicate SVG ID collision in React"
 date: 2020-06-15T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/svg-id-collision/svg-id-collision.png
+heroImage: ../assets/svg-id-collision/svg-id-collision.png
 description: >-
   A gotcha with SVG fill ids that can mean unexpected results when inline SVGs are rendered onto the page.
 tags:
@@ -16,17 +14,17 @@ Building a component library within a JavaScript library, such as React or Vue, 
 
 Let's use a gradient square to represent an icon component.
 
-![SVG square with a purple to light purple linear gradient](/img/svg-id-collision/rectangle.png)
+![SVG square with a purple to light purple linear gradient](../assets/svg-id-collision/rectangle.png)
 
 A workflow for converting an SVG to a component could be optimising the SVG in Jake Archibald’s fantastic [SVGOMG](https://jakearchibald.github.io/svgomg/) or a handy conversion tool like [SVG2JSX](https://svg2jsx.com/) to move straight to JSX.
 
 As with all projects, we will need more icons in our project, this time a circle.
 
-![SVG circle with an orange radial gradient from the centre](/img/svg-id-collision/circle.png)
+![SVG circle with an orange radial gradient from the centre](../assets/svg-id-collision/circle.png)
 
 Both icons work great, but strange things happen when used on the same page. Both icons become the same colour! Assuming the square icon appears in the markup first, we end up with this:
 
-![Square and circle icons with the same purple linear gradient from top left to bottom right](/img/svg-id-collision/collision.png)
+![Square and circle icons with the same purple linear gradient from top left to bottom right](../assets/svg-id-collision/collision.png)
 
 Why have both icons ended up with the same gradient? If we take a look at the code of the icons we can start to determine why.
 

@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Getting Started with Image Optimisation"
 date: 2019-03-23T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/image-optimisation/vector-raster.jpeg
+heroImage: ../assets/image-optimisation/vector-raster.jpeg
 description: >-
   A guide to getting started with image optimisation, choosing the right format, size and compression
 tags:
@@ -23,7 +21,7 @@ There were four areas covered during the talk:
 ## Format
 The first important choice in image optimisation is the format of your image. That starts with deciding whether the image is vector or raster. Vector images are made up of points, lines and polygons to create an image that, through the power of maths, is resolution independent. Raster images consist of individual pixels, they are not resolution independent but are perfect when photorealism is required.
 
-![Vector and Raster image comparison of a donut](/img/image-optimisation/vector-raster.jpeg)
+![Vector and Raster image comparison of a donut](../assets/image-optimisation/vector-raster.jpeg)
 
 There are four image formats to consider:
 
@@ -34,7 +32,7 @@ There are four image formats to consider:
 
 Choosing the right format is important because each format has strengths and weaknesses. To help in choosing the right format I came up with this workflow:
 
-![Image format workflow](/img/image-optimisation/workflow.jpeg)
+![Image format workflow](../assets/image-optimisation/workflow.jpeg)
 
 I’ll explain the workflow in a little more detail.
 
@@ -63,7 +61,7 @@ WEBP was primarily a Chrome format but recent browsers releases have improved su
 ## Size
 With the images in the right format, the next step is selecting the best (smallest) possible image size. One approach to this is to use the developer tools to inspect the site.
 
-![Chrome developer tools screenshot showing image expected vs actual size](/img/image-optimisation/dev-tools.jpeg)
+![Chrome developer tools screenshot showing image expected vs actual size](../assets/image-optimisation/dev-tools.jpeg)
 
 Developer tools tell us two interesting things, the size the browser is using and the size being sent. The best result is have those as close as possible. You’ll need to take inventory of the images and the various breakpoints of the site to determine the optimum number of images for your use case. This could mean images for mobile, tablet, desktop or mobile and desktop or several in between. You’ll need to decide based on your design and strike a balance between maintainability and performance.
 
@@ -107,7 +105,7 @@ The third part of our image optimisation process is compression. Compression wil
 ## ImageOptim
 For simplicity [ImageOptim](https://imageoptim.com/mac) is the tool you should use for compression. It’s a simple drag-and-drop utility, that provides great results, using industry best compression algorithms.
 
-![ImageOptim UI](/img/image-optimisation/imageoptim.png)
+![ImageOptim UI](../assets/image-optimisation/imageoptim.png)
 
 ## Squoosh
 Recently a team at Google released [Squoosh.app](https://squoosh.app/). Squoosh is an online tool that enables you to upload an image and test different approaches to image compression right in your browser. It can be interesting to see how different algorithms and image types react to compression.

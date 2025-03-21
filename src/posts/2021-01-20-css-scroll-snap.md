@@ -1,8 +1,6 @@
 ---
-templateKey: "blog-post"
 title: "Scroll Snap with CSS"
 date: 2021-01-20T00:00:00.000Z
-featuredpost: true
 description: >-
   Internationalizing comic books with CSS Grid and writing mode to support different reading modes.
 tags:

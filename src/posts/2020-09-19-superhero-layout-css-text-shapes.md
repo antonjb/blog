@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Superhero Layout - CSS Shapes for text"
 date: 2020-09-19T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/shl-text-shapes/text-shapes-hero.png
+heroImage: ../assets/shl-text-shapes/text-shapes-hero.png
 description: >-
   Combining CSS Grid and CSS Shapes to recreate a unique layout based on a comic book.
 tags:
@@ -16,13 +14,13 @@ Welcome to part five of the CSS Grid Superhero Layout series. In this fifth part
 
 Each post in the series has started with inspiration. Part five’s inspiration arrives via Saga by Image Comics. Our goal? Wrap the text around the planet’s shape like what we see in the first panel:
 
-![Saga #1 - Image Comics](/img/shl-text-shapes/saga_1.jpg)
+![Saga #1 - Image Comics](../assets/shl-text-shapes/saga_1.jpg)
 
 Wrapping text around a shape, like that of Saga, has been available in print for a very long time. It’s great we can borrow inspiration for our layouts and apply them to the web. It’ll give our comic layout more interest than a speech bubble that you might otherwise expect from a comic.
 
 First up, here’s the layout’s boilerplate code. Admittedly CSS Grid isn’t required for what we are doing, but let’s keep up our comic theme.
 
-![Three vertical panels with an image of a planet, mountain range and boots in each panel.](/img/shl-text-shapes/css-shapes-01.png)
+![Three vertical panels with an image of a planet, mountain range and boots in each panel.](../assets/shl-text-shapes/css-shapes-01.png)
 
 ```css
 .comic {
@@ -48,7 +46,7 @@ Next, add text that will wrap the planet. The text is a paragraph with a width s
 
 [Shape-outside](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside) is the property that makes the effect possible. We apply shape-outside to the image, giving the paragraph a boundary with which to flow around.
 
-![Panel 1 with paragraph and image with their css selectors labelled](/img/shl-text-shapes/css-shapes-02.png)
+![Panel 1 with paragraph and image with their css selectors labelled](../assets/shl-text-shapes/css-shapes-02.png)
 
 ```css
 .panel p {
@@ -74,11 +72,11 @@ A circle is one shape option available but there are ellipses and polygons too. 
 
 Remember this handy tip too (also covered in part four with a video) [Firefox has great dev tools](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes) that allow you to edit CSS Shapes, right in the browser. Open up the dev tools, inspect the image element and click on the icon next to shape-outside to find that perfect value.
 
-![Firefox Developer Tools shape editor tool being used to edit the path](/img/shl-text-shapes/css-shapes-03.png)
+![Firefox Developer Tools shape editor tool being used to edit the path](../assets/shl-text-shapes/css-shapes-03.png)
 
 Along with geometric shape, shape-outside has another handy option, image masks. For an image that’s a little more complex, like this cat, we can provide an image with an alpha mask. Shape outside will determine the rest.
 
-![Two panel comic with the text wrapping panel 1’s cat image. An image of the image mask labelled cat-mask.png to the side](/img/shl-text-shapes/css-shapes-04.png)
+![Two panel comic with the text wrapping panel 1’s cat image. An image of the image mask labelled cat-mask.png to the side](../assets/shl-text-shapes/css-shapes-04.png)
 
 ```css
 .panel img {

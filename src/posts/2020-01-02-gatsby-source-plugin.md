@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Handle empty results in a Gatsby source plug-in"
 date: 2020-01-02T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/gatsby-source-plugins.png
+heroImage: ../assets/gatsby-source-plugins.png
 description: >-
   How to explicity define GraphQL schemas for use in a GatsbyJS source plug-in
 tags:

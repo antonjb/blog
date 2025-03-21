@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Filling holes in CSS Grid with grid auto flow dense"
 date: 2020-11-26T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/grid-holes/grid-hero.png
+heroImage: ../assets/grid-holes/grid-hero.png
 description: >-
   How to fix holes in your CSS Grid when working with variably sized grid items.
 tags:
@@ -60,7 +58,7 @@ li:nth-child(7n) {
 
 Now with responsive grid items and spanning banners we can see the hole issue which looks like this:
 
-![Six grid items with a gap and the seventh grid item on the next line the full width of the page](/img/grid-holes/grid-holes-001.png)
+![Six grid items with a gap and the seventh grid item on the next line the full width of the page](../assets/grid-holes/grid-holes-001.png)
 
 To resolve this we set the following on our grid:
 
@@ -74,7 +72,7 @@ The dense attribute tells the packing algorithm to layout grid items in a way th
 
 This approach moves the items from their defined source order. A possible accessibility issue. Depending on the layout this might not be an issue but worth considering if you take this approach. Take a look at the labels in this screenshot:
 
-![Nine grid items number 1 to 6 then 8, 9 and 7](/img/grid-holes/grid-holes-002.png)
+![Nine grid items number 1 to 6 then 8, 9 and 7](../assets/grid-holes/grid-holes-002.png)
 
 Notice items 8 and 9 are now before item 7, despite the source code order. If your content is reliant on the order then this technique might not be the best choice. A list of product cards though would be ok.
 

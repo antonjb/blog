@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Superhero Layout - CSS Subgrid"
 date: 2020-03-10T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/shl-subgrid/subgrid-hero.png
+heroImage: ../assets/shl-subgrid/subgrid-hero.png
 description: >-
   Combining CSS Grid and comic book layouts in creative ways
 tags:
@@ -16,13 +14,13 @@ Welcome to the second article in the Superhero Layout CSS Grid series. The first
 
 Watchmen was known for adhering to a strict 9 panel grid layout (3 rows and 3 columns). Using what we created in the previous article covers the whole series. Even with that strict grid, certain panels in Watchmen manage to do something a little outside the box.
 
-![Watchmen  -  DC Comics](/img/shl-subgrid/watchmen.png)
+![Watchmen  -  DC Comics](../assets/shl-subgrid/watchmen.png)
 
 We could split the artwork in three and place each new image into grid cells to achieve the effect. There’s limitations to that approach though, such as now having three images! Instead let’s challenge ourselves to recreate the effect while maintaining the image. It gives us flexibility, say if we swap the image or when working with responsiveness later.
 
 First we create a grid to house our panels. This is using the same approach from the first article, so I’ll avoid repeating that here.
 
-![Four panel comic layout. An overlap div contains panel 3 in the centre and spans multiple rows.](/img/shl-subgrid/image-1.png)
+![Four panel comic layout. An overlap div contains panel 3 in the centre and spans multiple rows.](../assets/shl-subgrid/image-1.png)
 
 ```css
 .comic {
@@ -46,7 +44,7 @@ First we create a grid to house our panels. This is using the same approach from
 
 Typically grid cells don’t know about the parent grid, only direct children of the CSS Grid container become grid items. Using CSS Subgrid we change this and inherit the rows or columns from the parent element. That’s what happens when we set grid-template-columns to subgrid. Looking at this layout without the images gives us a better idea of what CSS Subgrid is doing.
 
-![Four panel comic layout with outlines showing the parent grid and subgrid in the middle that inherits the columns but sets its own rows.](/img/shl-subgrid/image-2.png)
+![Four panel comic layout with outlines showing the parent grid and subgrid in the middle that inherits the columns but sets its own rows.](../assets/shl-subgrid/image-2.png)
 
 ```css
 .overlap {
@@ -61,11 +59,11 @@ Now that overlap inherits the comic's columns when its columns resize so to will
 
 Replacing the graphics, it’s time to achieve the gap. We use a pseudo element, which is great for cosmetic content as it doesn’t become part of the document but does become a grid item. With the pseudo element being a grid item we can position it on top of the panel (I’ll cover overlapping much more in the next article). The last step is setting the outline property to the same size and colour as the grid’s gap. This simulates the gap in the grid. Hooray!
 
-![Five panel comic layout with the centre panel now split into two by the pseudo element](/img/shl-subgrid/image-3.png)
+![Five panel comic layout with the centre panel now split into two by the pseudo element](../assets/shl-subgrid/image-3.png)
 
 That’s ticked off our goal of maintaining the image while simulating a grid gap. Now is a great time to [take a look at the example’s CodePen](https://codepen.io/antonjb/pen/rgvKrO). I mentioned responsiveness earlier and the advantage of this technique. We can simply drop the pseudo element avoiding repositioning multiple images together.
 
-![Side-by-side of the desktop and mobile versions of the comic. The mobile version doesn’t have the gap in the panel.](/img/shl-subgrid/image-4.png)
+![Side-by-side of the desktop and mobile versions of the comic. The mobile version doesn’t have the gap in the panel.](../assets/shl-subgrid/image-4.png)
 
 Subgrid is a great addition to CSS Grid. Any time you have struggled to align items without setting a height across multiple panels. Say three cards and there’s always that one card with loads of text while the others are almost empty and you’re setting heights hoping it’ll line up. I cover this example more in my [Illustrated Guide to CSS Subgrid article](https://www.antonball.dev/blog/2019-11-25-illustrated-guide-subgrid/).
 

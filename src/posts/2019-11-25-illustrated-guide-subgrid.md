@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "CSS Subgrid Illustrated Guide"
 date: 2019-11-25T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/illustrated-guide/image-001.png
+heroImage: ../assets/illustrated-guide/image-001.png
 description: >-
   An illustrated guide to how CSS Subgrid can assist with aligning layouts, specifically card layouts for this example
 tags:
@@ -16,17 +14,17 @@ If you have ever heard the saying “This is the best thing since sliced bread�
 
 A common layout pattern is multiple cards along a row (Figure 1). Let’s say our cards feature a title, hero image and body text. Card designs often follow the happy path, which is to say, the title is an appropriate line length and the body text too.
 
-![Figure 1: Three cards with header, hero image and body text.](/img/illustrated-guide/image-002.png)
+![Figure 1: Three cards with header, hero image and body text.](../assets/illustrated-guide/image-002.png)
 
 Often however, in production, things go a little differently. Title and body text length can vary wildly between cards. This can ruin the aesthetic of the nice even cards across the row.
 
-![Figure 2: Three cards with header, hero image and body text of differing sizes negatively affecting the card’s alignment.](/img/illustrated-guide/image-003.png)
+![Figure 2: Three cards with header, hero image and body text of differing sizes negatively affecting the card’s alignment.](../assets/illustrated-guide/image-003.png)
 
 There are ways around this, you can limit the content that’s allowed to be used, set a min-height or height on elements will keep alignment but these restrict content or can lead to the visual aesthetic being sacrificed.
 
 You might be wondering whether Flexbox is a possible solution. It will get you most of the way there, but you might need to sacrifice design and/or semantics achieving the desired outcome. You could consider nesting grids but the problem is each individually nested grid does not know about the size of the other grids this means the tracks won’t align, much like in the case of Flexbox. So what can we do?
 
-![Figure 3: Three cards with header, hero image and body text of differing sizes but correct alignment.](/img/illustrated-guide/image-004.png)
+![Figure 3: Three cards with header, hero image and body text of differing sizes but correct alignment.](../assets/illustrated-guide/image-004.png)
 
 Enter CSS Subgrid. Subgrid gives nested grid containers the ability to inherit the size of the parent grid tracks. Without inheriting the parent’s grid track size items are independently size-the same behaviour as the Flexbox or nested grid examples mentioned earlier.
 
@@ -34,15 +32,15 @@ Note: A [Grid Track](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Trac
 
 With the parent grid providing the sizes for the three tracks the nested Subgrid will inherit the size of the parent track and resize to the largest grid cell across the entire row. Thus lining up the items!
 
-![Figure 4: Three cards aligned using nested grids and subgrid](/img/illustrated-guide/image-005.png)
+![Figure 4: Three cards aligned using nested grids and subgrid](../assets/illustrated-guide/image-005.png)
 
 With nested grids it can be difficult to visualise just what’s happening but thankfully Firefox has a fantastic Grid Inspector that makes debugging and working with CSS Grid much easier! (see Figure 5) Using our example you can enable the Grid Inspector on each of the grid and see how the grid is interacting and sizing to the parent’s grid track.
 
-![Figure 5: Firefox Developer Tools Grid Inspector](/img/illustrated-guide/ff-grid-inspector.png)
+![Figure 5: Firefox Developer Tools Grid Inspector](../assets/illustrated-guide/ff-grid-inspector.png)
 
 Firefox’s Grid Inspector demonstrates how Subgrid adds the gap between the rows. You can override this with Subgrid by setting the gap property, adjusting the gap size within the nested Subgrid.
 
-![Figure 6: Subgrid overriding the parent grids gap property](/img/illustrated-guide/ff-grid-inspector-gap.png)
+![Figure 6: Subgrid overriding the parent grids gap property](../assets/illustrated-guide/ff-grid-inspector-gap.png)
 
 So far Firefox 71 is the only browser that supports CSS Subgrid. Even though the browser support is looking slim right now, it won’t be long until the other browsers implement subgrid too. Keep an eye on [caniuse: Subgrid](https://caniuse.com/#feat=css-subgrid) to see when more browsers start supporting Subgrid.
 

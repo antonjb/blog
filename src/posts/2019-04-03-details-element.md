@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Getting my Details ducks in a row"
 date: 2019-04-03T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/details-post/hero.jpg
+heroImage: ../assets/details-post/hero.jpg
 description: >-
   Overcoming a quirk in Safari when using the Details element for a discolsure widget
 tags:
@@ -18,7 +16,7 @@ The [Details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 When using the Details and Summary elements I needed to hide the arrow, instead displaying an icon to the right. It should look like this:
 
-![Details element with Summary title and custom icon on the right](/img/details-post/001.png)
+![Details element with Summary title and custom icon on the right](../assets/details-post/001.png)
 
 [MDN’s Details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) article provides CSS to hide the toggle arrow, making that part straight forward. To display the icon, I opted for a pseudo-element (::after). To position everything, display: flex. The CSS looked like this:
 
@@ -40,11 +38,11 @@ This went smoothly. The end.
 
 OK, not quite. Most browsers behaved as expected. IE/Edge without support for Details display as if they were divs. Chrome and Firefox matched the design and then I tested Safari (12.1).
 
-![Details element with Summary title and custom icon on the right but below the title](/img/details-post/002.png)
+![Details element with Summary title and custom icon on the right but below the title](../assets/details-post/002.png)
 
 Interesting. The icon sits as if clearing Summary. Debugging commenced but it wasn’t until applying the same styling to a div that it helped me realise the issue. Here’s that same styling applied to a div displayed in Safari:
 
-![Details element with Summary title and custom icon on the right](/img/details-post/003.png)
+![Details element with Summary title and custom icon on the right](../assets/details-post/003.png)
 
 Everything is as intended. What’s happening? My best guess is Safari’s Shadow DOM has something that other browsers don’t.
 

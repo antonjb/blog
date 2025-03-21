@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Superhero Layout - internationalisation"
 date: 2020-10-19T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/shl-i11n/i11n-hero.png
+heroImage: ../assets/shl-i11n/i11n-hero.png
 description: >-
   Internationalizing comic books with CSS Grid and writing mode to support different reading modes.
 tags:
@@ -16,17 +14,17 @@ We made it to the sixth and final part of the CSS Grid Superhero Layout series. 
 
 All of the layouts we have played with throughout the article series have a western layout. Reading top-to-bottom, left-to-right. Consider Japanese manga, which has the reading style, right-to-left. Using this page from Naruto as an example:
 
-![Naruto six-panel layout. Start in the top right and finish in the bottom left](/img/shl-i11n/i11n-001.png)
+![Naruto six-panel layout. Start in the top right and finish in the bottom left](../assets/shl-i11n/i11n-001.png)
 
 The page starts in the top right corner and you read through to the bottom left. Even when translated to English it retains the same reading style.
 
-![Naruto #9 - Madman Entertainment](/img/shl-i11n/naruto_9_en.png)
+![Naruto #9 - Madman Entertainment](../assets/shl-i11n/naruto_9_en.png)
 
 The initial thought could be to order the HTML with the panels in the visual order required. In [part three when we covered layering](/blog/2020-05-19-super-hero-layout-layered-panels/) we discussed the importance of reading order on accessibility. But in short, source code order matters. We can’t do that here because the panel order would become panel 2, panel 3, panel 1, panel 6, panel 5, panel 4. The meaning has been lost.
 
 Instead, we put the images into source code in the correct order. Panel 1 through to panel 6.
 
-![Six numbered panels in a left to right top to bottom reading order](/img/shl-i11n/i11n-002.png)
+![Six numbered panels in a left to right top to bottom reading order](../assets/shl-i11n/i11n-002.png)
 
 ```css
 .comic {
@@ -40,7 +38,7 @@ Instead, we put the images into source code in the correct order. Panel 1 throug
 
 Which is great for those who read left-to-right. Next, we make use of the [direction attribute](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir) and CSS Grid handles the layout for us!
 
-![Six numbered panels in a right to left top to bottom reading order](/img/shl-i11n/i11n-003.png)
+![Six numbered panels in a right to left top to bottom reading order](../assets/shl-i11n/i11n-003.png)
 
 ```html
 <main class="comic" dir="rtl">
@@ -50,15 +48,15 @@ We have added support for a whole new reading style, just like that. I put toget
 
 There’s more though. Using this panel from the same Naruto manga, we have another consideration.
 
-![Single panel with speech text running top-down right to left](/img/shl-i11n/i11n-004.png)
+![Single panel with speech text running top-down right to left](../assets/shl-i11n/i11n-004.png)
 
 The speech bubble is right-to-left but also reads top-down. Here’s the English panel for comparison:
 
-![Single panel with speech text running left to right top to bottom](/img/shl-i11n/i11n-005.png)
+![Single panel with speech text running left to right top to bottom](../assets/shl-i11n/i11n-005.png)
 
 The CSS property that will achieve the desired direction is [writing-mode](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode). This typically would be set on the root HTML but for the example, we can add it to the speech bubble element like so:
 
-![Six-panel layout with a speech bubble with vertical text](/img/shl-i11n/i11n-006.png)
+![Six-panel layout with a speech bubble with vertical text](../assets/shl-i11n/i11n-006.png)
 
 ```css
 .bubble {

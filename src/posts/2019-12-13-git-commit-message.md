@@ -1,8 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Saving history in Git commit messages"
 date: 2019-12-17T00:00:00.000Z
-featuredpost: true
+heroImage: ../assets/git-messages/commit.png
 description: >-
   How can your Git Commit message save you later?
 tags:
@@ -45,7 +44,7 @@ Why is this structure useful to commit messages?
 ## Quicker Pull Request creation
 When using a UI for pull requests, such as GitHub or BitBucket, they understand this format and will automatically take the summary and use that as the title and body. You then don't have to spend time writing information. I'll typically add detail that isn't necessary for the commit message, such as where you might need your team's help or what file to start reviewing.
 
-![Figure 1. GitHub's interface automatically populated with the commit message](/img/git-messages/commit.png)
+![Figure 1. GitHub's interface automatically populated with the commit message](../assets/git-messages/commit.png)
 
 ## Retaining history
 With a short summary used, it's not always clear why we took that action. You have no doubt experienced this upon returning to old code sometimes months (sometimes minutes...) later and not understanding why it's like this.

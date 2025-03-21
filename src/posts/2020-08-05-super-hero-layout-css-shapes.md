@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Superhero Layout - Combining CSS Grid and CSS Shapes"
 date: 2020-08-05T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/shl-shapes/shapes-hero.png
+heroImage: ../assets/shl-shapes/shapes-hero.png
 description: >-
   Combining CSS Grid with CSS Clip-Paths to recreate a unique layout based on a comic book.
 tags:
@@ -16,18 +14,18 @@ Welcome to part four of the CSS Grid Layout series! In this part we combine the 
 
 Here's the inspiration for our layout, from Generations: Phoenix and Jean Grey by Marvel Comics.
 
-![Generations: Phoenix and Jean Grey - Marvel Comics](/img/shl-shapes/shapes-cover.jpg)
+![Generations: Phoenix and Jean Grey - Marvel Comics](../assets/shl-shapes/shapes-cover.jpg)
 
 It’s nice to see a layout that breaks out of the box. It’s even nicer that this is possible with CSS Grid. Everything we create is still going to be a rectangle, you can’t create a grid area that isn’t rectangular, but with clip-path, we can give the illusion of any shape we like.
 
 Before we get started, browser support. IE11 doesn’t support clip-path and that isn’t going to change, so you’ll need to consider alternatives but with Edge swapping to Chromium we now have pretty great access to clip-path across browsers.
 
-![Generations: Phoenix and Jean Grey - Marvel Comics](/img/shl-shapes/clip-path-support.png)
+![Generations: Phoenix and Jean Grey - Marvel Comics](../assets/shl-shapes/clip-path-support.png)
 [Can I use CSS Property clip-path](https://caniuse.com/#feat=mdn-css_properties_clip-path_basic_shape)
 
 Let’s get started with the container of our comic.
 
-![The comic's container. A4 shaped page with space themed background](/img/shl-shapes/shapes-001.png)
+![The comic's container. A4 shaped page with space themed background](../assets/shl-shapes/shapes-001.png)
 
 ```css
 .comic {
@@ -41,7 +39,7 @@ Let’s get started with the container of our comic.
 
 The comic consists of five panels each with an image inside.
 
-![Container with the panels div class and two panel images visible of a woman with her hands together and a cat](/img/shl-shapes/shapes-002.png)
+![Container with the panels div class and two panel images visible of a woman with her hands together and a cat](../assets/shl-shapes/shapes-002.png)
 
 ```css
 .panels {
@@ -52,13 +50,13 @@ The comic consists of five panels each with an image inside.
 
 You’re right to be wondering why there are only two visible images - the panels are overlapping. This is needed because the angles we create overlap and we need the image to be visible. If each was in its cell we wouldn’t get the same effect.
 
-![Five panels skewed on an angle](/img/shl-shapes/shapes-003.png)
+![Five panels skewed on an angle](../assets/shl-shapes/shapes-003.png)
 
 If we look at the layering in 3D - [thanks to Mandy Michael for this technique](https://medium.com/javascript-in-plain-english/creating-3d-layout-with-css-using-grid-perspective-65cd03dfc56c) - we get a better idea of how the layers overlap.
 
 The panels container is rotated and absolutely positioned to where it needs to be.
 
-![Comic container with panels in the bottom corner angled 20 degrees](/img/shl-shapes/shapes-004.png)
+![Comic container with panels in the bottom corner angled 20 degrees](../assets/shl-shapes/shapes-004.png)
 
 ```css
 .panels {
@@ -77,7 +75,7 @@ The panels container is rotated and absolutely positioned to where it needs to b
 
 Now we get to make the fancy shapes using clip-path! Because it’s vital to this technique, let’s look at how clip-path works.
 
-![Two images of the same cat, the right image has nodes that show where the clip-path goes and adjusts the shape of the image](/img/shl-shapes/shapes-005.png)
+![Two images of the same cat, the right image has nodes that show where the clip-path goes and adjusts the shape of the image](../assets/shl-shapes/shapes-005.png)
 
 ```css
 .panel-3 {
@@ -90,7 +88,7 @@ Clip-path changes the panel’s visible area by setting a shape (polygon in this
 
 When applied to each panel in our comic, we get the following:
 
-![Comic with the five panels at the bottom each with a non standard shape from clip-path](/img/shl-shapes/shapes-006.png)
+![Comic with the five panels at the bottom each with a non standard shape from clip-path](../assets/shl-shapes/shapes-006.png)
 
 Quoting Bon Jovi - “whoa, we are halfway there!”. Our layout is most of the way to being what the comic inspired us to be. Great.
 
@@ -115,11 +113,11 @@ Quoting Bon Jovi - “whoa, we are halfway there!”. Our layout is most of the 
 
 Clip-path values aren’t something I could determine just by looking at an image. Thankfully [Firefox’s Shape Path Editor](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes) allows you to interactively drag nodes and create the shape you need right in the browser. I took those values from the browser into the code.
 
-`video: /img/shl-shapes/clip-path.mp4`
+`video: ../assets/shapes/clip-path.mp4`
 
 The last part to recreate is the image borders. Sadly we can’t use CSS borders because clip-path hides content outside the clip path, which would include said borders. So we needed another idea.
 
-![Comic with five uniquely shaped panels along the bottom with a white border around the images](/img/shl-shapes/shapes-008.png)
+![Comic with five uniquely shaped panels along the bottom with a white border around the images](../assets/shl-shapes/shapes-008.png)
 
 ```css
 .panel-1 {
@@ -142,24 +140,24 @@ To achieve the border, set the background colour on the div to white, then add t
 
 A downside of this technique is you are setting the grid-gap manually because you’re clipping and overlapping. So you’ll need to be accurate if you decide to have a gap.
 
-![Comic with five uniquely shaped panels along the bottom with a white border around the images](/img/shl-shapes/shapes-009.png)
+![Comic with five uniquely shaped panels along the bottom with a white border around the images](../assets/shl-shapes/shapes-009.png)
 
 There we go. We have recreated the comic layout, even with its unique shapes right in the browser. [Take a look at this example on CodePen](https://codepen.io/antonjb/pen/mYyJvj) to see it in action.
 
 Combining clip-path and grid can lend itself to great new layout options. If we combine it with what we learnt about layering in part 3 we can recreate this layout from Detective Comics 876 - published by DC Comics.
 
-![Detective Comic 876 next to the web recreation](/img/shl-shapes/shapes-010.png)
+![Detective Comic 876 next to the web recreation](../assets/shl-shapes/shapes-010.png)
 
 This [Detective Comics inspired layout is also available on CodePen](https://codepen.io/antonjb/pen/EJOLMx) if you’d like to take a look.
 
 Clip-path has other shapes available too. Polygon is great for making lots of edges but we we can also create an ellipse or a circle with the following code.
 
-![circle(156px at 241px 162px);](/img/shl-shapes/shapes-011.png)
-![ellipse(148px 202px at 245px 205px);](/img/shl-shapes/shapes-012.png)
+![circle(156px at 241px 162px);](../assets/shl-shapes/shapes-011.png)
+![ellipse(148px 202px at 245px 205px);](../assets/shl-shapes/shapes-012.png)
 
 If we combine our superpowers of CSS Grid, polygon, circle and ellipse clip paths then we can even recreate this wild layout from the Flash Comic series. Again, [you can preview this layout on CodePen](https://codepen.io/antonjb/pen/JqjdBr).
 
-![Flash circle panel layout next to web recreation](/img/shl-shapes/shapes-013.png)
+![Flash circle panel layout next to web recreation](../assets/shl-shapes/shapes-013.png)
 
 I hope these examples have inspired you to think outside the box with layouts. Combining CSS Grid with clip-path can open up layout to some amazing possibilities. If you’d like to take a look at the examples on CodePen here are the links for The [Phoenix inspired layout](https://codepen.io/antonjb/pen/mYyJvj), [Detective Comics inspired layout](https://codepen.io/antonjb/pen/EJOLMx) and [Flash inspired layout](https://codepen.io/antonjb/pen/JqjdBr).
 

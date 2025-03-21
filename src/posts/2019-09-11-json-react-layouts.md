@@ -1,9 +1,7 @@
 ---
-templateKey: "blog-post"
 title: "Getting started with JSON React Layouts"
 date: 2019-09-11T00:00:00.000Z
-featuredpost: true
-featuredimage: /img/start-here.jpg
+heroImage: ../assets/start-here.jpg
 description: >-
   Introductory guide to using JSON React Layouts library
 tags:

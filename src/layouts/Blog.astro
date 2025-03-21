@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets'
+import Layout from './Layout.astro'
+
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+    frontmatter: CollectionEntry<'posts'>['data']
+}
+
+const { frontmatter } = Astro.props
+---
+
+<Layout title={frontmatter.title}>
+    {
+        frontmatter.heroImage ? (
+            <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} />
+        ) : null
+    }
+    <h1>{frontmatter.title}</h1>
+    <p>
+        <time datetime={frontmatter.date.toISOString()}>{frontmatter.date.toLocaleString()}</time>
+    </p>
+    {
+        frontmatter.tags ? (
+            <ul>
+                {frontmatter.tags.map((tag) => (
+                    <li>{tag}</li>
+                ))}
+            </ul>
+        ) : undefined
+    }
+    <slot />
+</Layout>
