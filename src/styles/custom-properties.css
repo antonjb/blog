@@ -1,0 +1,12 @@
+:root {
+    --ratio: 1.5;
+    --space-0: 1.5rem;
+    --space-1: calc(var(--space-0) * pow(var(--ratio), 1));
+    --space-2: calc(var(--space-0) * pow(var(--ratio), 2));
+    --space-3: calc(var(--space-0) * pow(var(--ratio), 3));
+    --space-4: calc(var(--space-0) * pow(var(--ratio), 4));
+    --space-5: calc(var(--space-0) * pow(var(--ratio), 5));
+    --space-6: calc(var(--space-0) * pow(var(--ratio), 6));
+    --space-7: calc(var(--space-0) * pow(var(--ratio), 7));
+    --space-8: calc(var(--space-0) * pow(var(--ratio), 8));
+}
