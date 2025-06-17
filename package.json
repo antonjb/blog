@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "author": "Anton Ball",
   "dependencies": {
-    "astro": "^5.1.9"
+    "astro": "5.9.4"
   },
   "keywords": [],
   "license": "MIT",
