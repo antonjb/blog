@@ -1,13 +1,14 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
+import Stack from '../components/stack.astro'
 
 const posts = await getCollection('posts')
 posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 <Layout>
-    <ul>
+    <Stack element="ul">
         {
             posts.map((post) => (
                 <li>
@@ -15,5 +16,5 @@ posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
                 </li>
             ))
         }
-    </ul>
+    </Stack>
 </Layout>
