@@ -1,15 +1,17 @@
 :root {
+    --measure: 60ch;
+
     --ratio: 1.5;
     --space-0: 0;
     --space-1: 1.5rem;
-    --space-2: calc(var(--space-0) * pow(var(--ratio), 1));
-    --space-3: calc(var(--space-0) * pow(var(--ratio), 2));
-    --space-4: calc(var(--space-0) * pow(var(--ratio), 3));
-    --space-5: calc(var(--space-0) * pow(var(--ratio), 4));
-    --space-6: calc(var(--space-0) * pow(var(--ratio), 5));
-    --space-7: calc(var(--space-0) * pow(var(--ratio), 6));
-    --space-8: calc(var(--space-0) * pow(var(--ratio), 7));
-    --space-9: calc(var(--space-0) * pow(var(--ratio), 8));
+    --space-2: calc(var(--space-1) * pow(var(--ratio), 1));
+    --space-3: calc(var(--space-1) * pow(var(--ratio), 2));
+    --space-4: calc(var(--space-1) * pow(var(--ratio), 3));
+    --space-5: calc(var(--space-1) * pow(var(--ratio), 4));
+    --space-6: calc(var(--space-1) * pow(var(--ratio), 5));
+    --space-7: calc(var(--space-1) * pow(var(--ratio), 6));
+    --space-8: calc(var(--space-1) * pow(var(--ratio), 7));
+    --space-9: calc(var(--space-1) * pow(var(--ratio), 8));
 
     /** Using the values from https://github.com/argyleink/open-props/blob/main/src/props.borders.css */
     --border-size-0: 0px;
