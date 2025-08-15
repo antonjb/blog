@@ -1,0 +1,41 @@
+---
+import type { Property } from 'csstype'
+import type { Space } from '../types/space'
+import type { HTMLTag } from 'astro/types'
+
+interface Props {
+    justify?: Property.JustifyContent
+    align?: Property.AlignItems
+    space?: Space
+    element?: HTMLTag
+}
+
+const {
+    justify = 'flex-start',
+    align = 'flex-start',
+    space: spaceStyle = '1',
+    element: Element = 'div',
+} = Astro.props
+
+const space = `var(--space-${spaceStyle}, var(--space-1, 1rem))`
+---
+
+<!-- 
+    Typically you would use Astro's define:vars to set the space variable 
+    but that isn't supported with dynamic tags. Instead the value is passed inline
+    If that ever changes, change this to use define:vars on the style tag.
+    see: https://docs.astro.build/en/reference/astro-syntax/#dynamic-tags
+-->
+<Element class="cluster" style={`--justify: ${justify}; --align: ${align}; --space: ${space};`}>
+    <slot />
+</Element>
+
+<style>
+    .cluster {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: var(--justify);
+        align-items: var(--align);
+        gap: var(--space);
+    }
+</style>
