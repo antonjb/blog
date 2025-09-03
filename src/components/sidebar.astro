@@ -1,0 +1,70 @@
+---
+import type { Space } from '../types/space'
+
+interface Props {
+    side?: 'left' | 'right'
+    sideWidth?: string
+    contentMin?: string
+    gap?: Space
+    noStretch?: boolean
+}
+
+const { side = 'left', gap = '0', sideWidth, contentMin = '50%', noStretch = false } = Astro.props
+const gapStyle = `var(--space-${gap}, var(--space-0, 0))`
+---
+
+<div
+    class="sidebar"
+    class:list={[
+        { 'sidebar-left': side === 'left', 'sidebar-right': side !== 'left', noStretch: noStretch },
+    ]}
+>
+    {
+        side === 'left' ? (
+            <>
+                <slot name="sidebar" />
+                <slot name="content" />
+            </>
+        ) : (
+            <>
+                <slot name="content" />
+                <slot name="sidebar" />
+            </>
+        )
+    }
+</div>
+
+<style define:vars={{ gap: gapStyle, sideWidth, contentMin }}>
+    .sidebar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+
+        & > :global(*) {
+            outline: 1px solid red;
+
+            flex-grow: 1;
+            flex-basis: var(--sideWidth);
+        }
+    }
+
+    .sidebar-left {
+        & > :global(*:last-child) {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-inline-size: var(--contentMin);
+        }
+    }
+
+    .sidebar-right {
+        & > :global(*:first-child) {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-inline-size: var(--contentMin);
+        }
+    }
+
+    .noStretch {
+        align-items: flex-start;
+    }
+</style>
