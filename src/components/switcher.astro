@@ -1,0 +1,26 @@
+---
+import type { Space } from '../types/space'
+
+interface Props {
+    space?: Space
+    measure?: string
+}
+
+const { space = '0', measure = 'var(--measure)' } = Astro.props
+const spaceStyle = `var(--space-${space}, var(--space-0, 0))`
+---
+
+<div class="switcher"><slot /></div>
+
+<style define:vars={{ space: spaceStyle, measure }}>
+    .switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space);
+
+        & > :global(*) {
+            flex-basis: calc((var(--measure) - 100%) * 999);
+            flex-grow: 1;
+        }
+    }
+</style>
