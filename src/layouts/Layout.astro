@@ -1,34 +1,149 @@
 ---
 import '../styles/custom-properties.css'
+import Logo from '../assets/logo.svg'
+
 interface Props {
     title?: string
+    description?: string
 }
 
-const { title } = Astro.props
+const siteTitle = 'Anton Ball dot dev'
+const defaultDescription = 'Frontend development and CSS insights from Anton'
+
+const { title, description = defaultDescription } = Astro.props
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <title>{title ? `${title} | ` : ``} Anton Ball dot dev</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="description" content={description} />
+        <meta name="theme-color" content="#f47100" />
+
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={new URL('/ogimage.png', Astro.site)} />
+        <meta property="og:image:alt" content={siteTitle} />
+
+        <title>{pageTitle}</title>
+        <slot name="head" />
     </head>
     <body>
+        <nav>
+            <header>
+                <a class="logo" href="/" aria-label={siteTitle}>
+                    <Logo aria-hidden="true" />
+                </a>
+            </header>
+        </nav>
         <slot />
     </body>
 </html>
 
+<style>
+    body {
+        display: grid;
+        grid-template-columns: [overflow-start gutter-start] 1fr [gutter-end main-start] minmax(auto, calc(var(--measure) * 2)) [main-end gutter-right-start] 1fr [overflow-end gutter-right-end];
+        grid-auto-rows: min-content;
+    }
+
+    :global(body > *) {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: main;
+    }
+
+    header {
+        display: flex;
+        place-content: center;
+
+        & > * {
+            flex: 1;
+        }
+    }
+    
+    .logo {
+        max-inline-size: 338px;
+        fill: #000;
+        transition: fill 0.1s linear;
+    }
+
+    .logo:hover,
+    .logo:focus-visible {
+        fill: var(--color-primary);
+    }
+</style>
+
 <style is:global>
-    * {
+    /* https://piccalil.li/blog/a-more-modern-css-reset/ */
+    *,
+    *::before,
+    *::after {
         box-sizing: border-box;
     }
 
-    html,
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
+    html {
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
     }
+
+    body, h1, h2, h3, h4, p,
+    figure, blockquote, dl, dd {
+        margin-block-end: 0;
+    }
+
+    ul[role='list'],
+    ol[role='list'] {
+        list-style: none;
+    }
+
+    body {
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    h1, h2, h3, h4,
+    button, input, label {
+        line-height: 1.1;
+    }
+
+    h1, h2,
+    h3, h4 {
+        text-wrap: balance;
+    }
+
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+    }
+
+    img,
+    picture {
+        max-width: 100%;
+        display: block;
+    }
+
+    input, button,
+    textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+    }
+
+    textarea:not([rows]) {
+        min-height: 10em;
+    }
+
+    :target {
+        scroll-margin-block: 5ex;
+    }
+
 </style>
