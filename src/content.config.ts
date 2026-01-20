@@ -1,16 +1,31 @@
 import { glob, file } from 'astro/loaders'
 import { z, defineCollection } from 'astro:content'
 
+const dateFormatter = new Intl.DateTimeFormat('en-AU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+})
+
 const posts = defineCollection({
     loader: glob({ pattern: '**/[^_]*.md', base: './src/posts' }),
     schema: ({ image }) =>
-        z.object({
-            title: z.string(),
-            date: z.date(),
-            description: z.string(),
-            heroImage: image().optional(),
-            tags: z.array(z.string()),
-        }),
+        z
+            .object({
+                title: z.string(),
+                date: z.date(),
+                description: z.string(),
+                heroImage: image().optional(),
+                tags: z.array(z.string()),
+            })
+            .transform((data) => {
+                console.log(data)
+                return {
+                    ...data,
+                    formattedDate: dateFormatter.format(data.date),
+                }
+            }
+            ),
 })
 
 const talks = defineCollection({

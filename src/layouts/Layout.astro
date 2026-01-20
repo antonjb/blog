@@ -51,7 +51,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 <style>
     body {
         display: grid;
-        grid-template-columns: [overflow-start gutter-start] 1fr [gutter-end main-start] minmax(auto, calc(var(--measure) * 2)) [main-end gutter-right-start] 1fr [overflow-end gutter-right-end];
+        grid-template-columns: [overflow-start gutter-start] minmax(var(--space-2), 1fr) [gutter-end main-start] minmax(0, calc(var(--measure) * 1.25)) [main-end gutter-right-start] minmax(var(--space-2), 1fr) [overflow-end gutter-right-end];
         grid-auto-rows: min-content;
     }
 
@@ -64,6 +64,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
     header {
         display: flex;
         place-content: center;
+        margin-block-end: var(--space-2);
 
         & > * {
             flex: 1;
@@ -109,6 +110,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
     body {
         min-height: 100vh;
         line-height: 1.5;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+            'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+            'Noto Color Emoji';
     }
 
     h1, h2, h3, h4,
@@ -144,6 +148,18 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 
     :target {
         scroll-margin-block: 5ex;
+    }
+
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
     }
 
 </style>
