@@ -11,7 +11,7 @@ interface Props {
 const { frontmatter } = Astro.props
 ---
 
-<Layout title={frontmatter.title}>
+<Layout title={frontmatter.title} description={frontmatter.description} publishedDate={frontmatter.date} tags={frontmatter.tags}>
     {
         frontmatter.heroImage ? (
             <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} />
