@@ -14,7 +14,7 @@ const { frontmatter } = Astro.props
 <Layout title={frontmatter.title} description={frontmatter.description} publishedDate={frontmatter.date} tags={frontmatter.tags}>
     {
         frontmatter.heroImage ? (
-            <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} />
+            <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} class="hero-image" />
         ) : null
     }
     <h1>{frontmatter.title}</h1>
@@ -32,3 +32,13 @@ const { frontmatter } = Astro.props
     }
     <slot />
 </Layout>
+
+<style>
+    .hero-image {
+        grid-column: overflow;
+        inline-size: 100%;
+        block-size: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>
