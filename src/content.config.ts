@@ -19,7 +19,6 @@ const posts = defineCollection({
                 tags: z.array(z.string()),
             })
             .transform((data) => {
-                console.log(data)
                 return {
                     ...data,
                     formattedDate: dateFormatter.format(data.date),
