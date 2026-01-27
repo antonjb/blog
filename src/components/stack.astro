@@ -6,9 +6,10 @@ interface Props {
     space?: Space
     recursive?: boolean
     element?: HTMLTag
+    class?: string
 }
 
-const { recursive = false, element: Element = 'div', space } = Astro.props
+const { recursive = false, element: Element = 'div', space, class: className } = Astro.props
 ---
 
 <!-- 
@@ -18,8 +19,7 @@ const { recursive = false, element: Element = 'div', space } = Astro.props
     see: https://docs.astro.build/en/reference/astro-syntax/#dynamic-tags
 -->
 <Element
-    class="stack"
-    class:list={recursive ? 'recursive' : ''}
+    class:list={['stack', { recursive }, className]}
     style={`--space: var(--space-${space}, var(--space-0, 1.5rem));`}
 >
     <slot />

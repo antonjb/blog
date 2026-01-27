@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets'
-import Layout from './Layout.astro'
+import Layout from '@/layouts/Layout.astro'
+import Prose from '@/components/prose.astro'
+import Tags from '@/components/Tags.astro'
 
 import type { CollectionEntry } from 'astro:content'
 
@@ -17,23 +19,27 @@ const { frontmatter } = Astro.props
             <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} class="hero-image" />
         ) : null
     }
-    <h1>{frontmatter.title}</h1>
-    <p>
-        <time datetime={frontmatter.date.toISOString()}>{frontmatter.date.toLocaleString()}</time>
-    </p>
-    {
-        frontmatter.tags ? (
-            <ul>
-                {frontmatter.tags.map((tag) => (
-                    <li>{tag}</li>
-                ))}
-            </ul>
-        ) : undefined
-    }
-    <slot />
+    <main>
+        <h1>{frontmatter.title}</h1>
+        <Prose>
+            <slot />
+        </Prose>
+        {frontmatter.tags && <Tags tags={frontmatter.tags} />}
+
+    </main>
 </Layout>
 
 <style>
+    main {
+        margin-block-end: var(--space-2);
+    }
+
+    h1 {
+        margin-block-end: var(--space-1);
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
     .hero-image {
         grid-column: overflow;
         inline-size: 100%;
