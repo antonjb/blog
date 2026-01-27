@@ -1,3 +1,6 @@
+import Video from '@/components/video.astro'
+import clipPathVideo from '@/assets/shl-shapes/clip-path.mp4'
+
 ---
 title: "Superhero Layout - Combining CSS Grid and CSS Shapes"
 date: 2020-08-05T00:00:00.000Z
@@ -113,7 +116,7 @@ Quoting Bon Jovi - “whoa, we are halfway there!”. Our layout is most of the 
 
 Clip-path values aren’t something I could determine just by looking at an image. Thankfully [Firefox’s Shape Path Editor](https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Edit_CSS_shapes) allows you to interactively drag nodes and create the shape you need right in the browser. I took those values from the browser into the code.
 
-`video: ../assets/shapes/clip-path.mp4`
+<Video src={clipPathVideo} />
 
 The last part to recreate is the image borders. Sadly we can’t use CSS borders because clip-path hides content outside the clip path, which would include said borders. So we needed another idea.
 

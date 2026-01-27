@@ -8,7 +8,7 @@ const dateFormatter = new Intl.DateTimeFormat('en-AU', {
 })
 
 const posts = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.md', base: './src/posts' }),
+    loader: glob({ pattern: '**/[^_]*.md(x)?', base: './src/posts' }),
     schema: ({ image }) =>
         z
             .object({

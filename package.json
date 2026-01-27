@@ -4,6 +4,7 @@
   "version": "2.0.0",
   "author": "Anton Ball",
   "dependencies": {
+    "@astrojs/mdx": "4.3.13",
     "astro": "^5.16.10",
     "remark": "15.0.1",
     "strip-markdown": "6.0.0"
