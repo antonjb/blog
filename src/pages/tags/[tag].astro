@@ -1,0 +1,35 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+    const posts = await getCollection('posts')
+    const tagSet = new Set(posts.flatMap(post => post.data.tags))
+
+    return Array.from(tagSet).map(tag => ({
+        params: { tag: tag.toLowerCase() },
+    }))
+}
+
+const { tag } = Astro.params
+
+const posts = await getCollection('posts', (post) => post.data.tags.includes(tag))
+const postCount = posts.length
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
+---
+
+<Layout title={tag}>
+    <main>
+        <h1>Tag: {tag}</h1>
+        <p>{postCount} post(s) tagged with “{tag}”</p>
+        <ul>
+            {posts.map(post => (
+                <li>
+                    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                </li>
+            ))}
+        </ul>
+        <p><a href="/tags/">Browse all tags</a></p>
+    </main>
+</Layout>
