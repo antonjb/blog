@@ -132,7 +132,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
 
     a:not([class]) {
         text-decoration-skip-ink: auto;
-        color: currentColor;
+        text-underline-offset: 0.15em;
+        color: var(--color-primary);
+
+        &:hover {
+            text-decoration-thickness: 2px;
+        }
     }
 
     img,
@@ -166,5 +171,4 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site)
         white-space: nowrap;
         border: 0;
     }
-
 </style>
