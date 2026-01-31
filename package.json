@@ -19,6 +19,7 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "csstype": "^3.2.3"
+    "csstype": "^3.2.3",
+    "wrangler": "4.61.1"
   }
 }
