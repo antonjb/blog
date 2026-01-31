@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+import Stack from '../components/stack.astro'
+import ArticleCard from '../components/article-card.astro'
+
+const posts = await getCollection('posts')
+posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+
+---
+
+<Layout>
+    <Stack element="main" space="3">
+        {
+            posts.map((post) => (
+                <ArticleCard post={post} />
+            ))
+        }
+    </Stack>
+</Layout>

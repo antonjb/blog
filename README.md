@@ -1,26 +1,73 @@
-# Personal and blog site
+# antonball.dev
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4ee022fb-5e34-4c5b-9432-df335bdb4c32/deploy-status)](https://app.netlify.com/sites/clever-euclid-e4f9be/deploys)
+Personal blog about frontend development, CSS, and web technologies.
 
-### Media Libraries (installed, but optional)
+## Tech Stack
 
-Media Libraries have been included in this starter as a default. If you are not planning to use `Uploadcare` or `Cloudinary` in your project, you **can** remove them from module import and registration in `src/cms/cms.js`. Here is an example of the lines to comment or remove them your project.
+- **[Astro](https://astro.build)** - Static site generator
+- **MDX** - Markdown with JSX components
+- **TypeScript** - Type-safe development
 
-```javascript
-import CMS from "netlify-cms-app";
-// import uploadcare from 'netlify-cms-media-library-uploadcare'
-// import cloudinary from 'netlify-cms-media-library-cloudinary'
+## Getting Started
 
-import AboutPagePreview from "./preview-templates/AboutPagePreview";
-import BlogPostPreview from "./preview-templates/BlogPostPreview";
-import ProductPagePreview from "./preview-templates/ProductPagePreview";
-import IndexPagePreview from "./preview-templates/IndexPagePreview";
+```bash
+# Install dependencies
+npm install
 
-// CMS.registerMediaLibrary(uploadcare);
-// CMS.registerMediaLibrary(cloudinary);
+# Start development server
+npm run dev
 
-CMS.registerPreviewTemplate("index", IndexPagePreview);
-CMS.registerPreviewTemplate("about", AboutPagePreview);
-CMS.registerPreviewTemplate("products", ProductPagePreview);
-CMS.registerPreviewTemplate("blog", BlogPostPreview);
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Project Structure
+
+```
+src/
+├── assets/        # Images, logos, icons
+├── components/    # Reusable Astro components
+├── layouts/       # Page layouts (main, blog post)
+├── pages/         # Route pages
+├── posts/         # Blog posts (MD/MDX)
+├── styles/        # CSS custom properties
+├── talks/         # Conference talk data
+└── types/         # TypeScript definitions
+```
+
+## Writing Blog Posts
+
+Add a new `.md` or `.mdx` file to `src/posts/` with frontmatter:
+
+```yaml
+---
+title: "Your Post Title"
+date: 2026-01-31
+description: "A brief description for previews and SEO"
+heroImage: "./images/hero.jpg"  # Optional
+tags: ["css", "javascript"]
+---
+```
+
+MDX files can import and use components from `src/components/`.
+
+## Adding Talks
+
+Edit `src/talks/talks.json`:
+
+```json
+{
+  "title": "Talk Title",
+  "date": "2026-01-31",
+  "conference": "Conference Name",
+  "location": "City, Country",
+  "videoUrl": "https://..."  // Optional
+}
+```
+
+## Deployment
+
+TBD

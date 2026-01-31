@@ -1,0 +1,188 @@
+[
+    {
+        "id": "yow-sydney-2024",
+        "title": "Pillars of Async Communication",
+        "date": "2024-12-12",
+        "conference": "YOW! Sydney 2024",
+        "videoUrl": "https://yowcon.com/sydney-2024/sessions/3552/pillars-of-async-communication",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "yow-brisbane-2024",
+        "title": "Pillars of Async Communication",
+        "date": "2024-12-09",
+        "conference": "YOW! Brisbane 2024",
+        "videoUrl": "https://yowcon.com/brisbane-2024/sessions/3553/pillars-of-async-communication",
+        "location": "Brisbane, Australia"
+    },
+    {
+        "id": "yow-melbourne-2024",
+        "title": "Pillars of Async Communication",
+        "date": "2024-12-05",
+        "conference": "YOW! Melbourne 2024",
+        "videoUrl": "https://yowcon.com/melbourne-2024/sessions/3554/pillars-of-async-communication",
+        "location": "Melbourne, Australia"
+    },
+    {
+        "id": "web-directions-developer-summit-2024",
+        "title": "CSS:has(everything)",
+        "date": "2024-11-27",
+        "conference": "Web Directions Developer Summit",
+        "videoUrl": "https://conffab.com/presentation/csshas-everything/?gl=00XZZGlE4se9",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "yow-tls-melbourne-2024",
+        "title": "Mastering Async: A Guide for Modern Team Leaders",
+        "date": "2024-09-13",
+        "conference": "YOW! Tech Leaders Summit Melbourne 2024",
+        "videoUrl": "https://yowcon.com/tech-leaders-melbourne-2024/sessions/3401/mastering-async-a-guide-for-modern-team-leaders",
+        "location": "Melbourne, Australia"
+    },
+    {
+        "id": "yow-tls-sydney-2024",
+        "title": "Mastering Async: A Guide for Modern Team Leaders",
+        "date": "2024-09-12",
+        "conference": "YOW! Tech Leaders Summit Sydney 2024",
+        "videoUrl": "https://yowcon.com/tech-leaders-sydney-2024/sessions/3402/mastering-async-a-guide-for-modern-team-leaders",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "yow-tls-brisbane-2024",
+        "title": "Mastering Async: A Guide for Modern Team Leaders",
+        "date": "2024-09-11",
+        "conference": "YOW! Tech Leaders Summit Brisbane 2024",
+        "videoUrl": "https://yowcon.com/tech-leaders-brisbane-2024/sessions/3403/mastering-async-a-guide-for-modern-team-leaders",
+        "location": "Brisbane, Australia"
+    },
+    {
+        "id": "ndc-sydney-2024",
+        "title": "Styling the Future: A Deep Dive into Modern CSS",
+        "date": "2024-02-14",
+        "conference": "NDC Sydney 2024",
+        "videoUrl": "https://www.youtube.com/watch?v=z7K9zlFWOZ8",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "ndc-copenhagen-2023",
+        "title": "Superhero Layouts",
+        "date": "2023-08-29",
+        "conference": "Copenhagen Developers Festival 2023",
+        "videoUrl": "https://youtu.be/9f7K6aU0LeE",
+        "location": "Copenhagen, Denmark"
+    },
+    {
+        "id": "ndc-oslo-2023",
+        "title": "CSS in 2023 and beyond",
+        "date": "2023-05-24",
+        "conference": "NDC Oslo 2023",
+        "videoUrl": "https://youtu.be/NsjVEMKhxmc",
+        "location": "Oslo, Norway"
+    },
+    {
+        "id": "ndc-london-2023",
+        "title": "Superhero Layouts",
+        "date": "2023-01-25",
+        "conference": "NDC London 2023",
+        "videoUrl": "https://youtu.be/eM3HWYQcJVk",
+        "location": "London, UK"
+    },
+    {
+        "id": "web-directions-summit-2022",
+        "title": "Sync To Async - Adjusting To The New Work Style",
+        "date": "2022-12-01",
+        "conference": "Web Directions Summit 2022",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "ndc-oslo-2022",
+        "title": "Superhero Layouts",
+        "date": "2022-09-28",
+        "conference": "NDC Oslo 2022",
+        "videoUrl": "https://youtu.be/1YDBJNH2auc",
+        "location": "Oslo, Norway"
+    },
+    {
+        "id": "ddd-perth-2022",
+        "title": "Superhero Layouts",
+        "date": "2022-09-10",
+        "conference": "DDD Perth 2022",
+        "location": "Perth, Australia"
+    },
+    {
+        "id": "web-directions-lazy-load-2021",
+        "title": "Native Lazy Loading",
+        "date": "2021-06-11",
+        "conference": "Web Directions Lazy Load 2021",
+        "videoUrl": "https://conffab.com/presentation/native-lazy-loading/",
+        "location": "Online"
+    },
+    {
+        "id": "web-directions-hover-2021",
+        "title": "CSS Aspect Ratio",
+        "date": "2021-04-23",
+        "conference": "Web Directions Hover 2021",
+        "videoUrl": "https://conffab.com/presentation/css-aspect-ratio/",
+        "location": "Online"
+    },
+    {
+        "id": "code-motion-2019",
+        "title": "Super Hero Layouts",
+        "date": "2019-12-04",
+        "conference": "Code Motion",
+        "videoUrl": "https://youtu.be/QUDpO1iCdr4",
+        "location": "Online"
+    },
+    {
+        "id": "ndc-sydney-2019",
+        "title": "Commuting like a developer",
+        "date": "2019-10-16",
+        "conference": "NDC Sydney 2019",
+        "videoUrl": "https://youtu.be/nprLjvbx5P0",
+        "location": "Sydney, Australia"
+    },
+    {
+        "id": "code-motion-oct-2019",
+        "title": "Commuting like a developer",
+        "date": "2019-10-01",
+        "conference": "Code Motion",
+        "videoUrl": "https://youtu.be/DpyjcPRVeNI",
+        "location": "Online"
+    },
+    {
+        "id": "web-directions-code-2019",
+        "title": "Super Hero Layouts",
+        "date": "2019-06-20",
+        "conference": "Web Directions Code 2019",
+        "videoUrl": "https://conffab.com/presentation/super-hero-layouts/",
+        "location": "Melbourne, Australia"
+    },
+    {
+        "id": "fenders-may-2019",
+        "title": "Super Hero Layouts",
+        "date": "2019-05-22",
+        "conference": "Fenders Perth 2019",
+        "location": "Perth, Australia"
+    },
+    {
+        "id": "devfest-2019",
+        "title": "Pictures are worth a thousand words…and sometimes 1,000MB. A cautionary tale.",
+        "date": "2019-10-27",
+        "conference": "DevFest Melbourne 2019",
+        "location": "Melbourne, Australia"
+    },
+    {
+        "id": "junior-dev-2019",
+        "title": "Pictures are worth a thousand words…and sometimes 1,000MB. A cautionary tale.",
+        "date": "2019-03-25",
+        "conference": "Junior Dev Perth 2019",
+        "location": "Perth, Australia"
+    },
+    {
+        "id": "fenders-2018",
+        "title": "CSS Grid: the new layout system of the web",
+        "date": "2018-01-18",
+        "conference": "Fenders Perth 2018",
+        "location": "Perth, Australia"
+    }
+]

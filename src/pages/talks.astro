@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../layouts/Layout.astro'
+
+const talks = await getCollection('talks')
+talks.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+
+<Layout title="Conference Talks">
+    <main>
+        <h1>Conference Talks</h1>
+
+        <ul>
+            {
+                talks.map((talk) => (
+                    <li>
+                        <h2>{talk.data.title}</h2>
+                        <div>
+                            <p>{talk.data.conference}</p>
+                            <p>{talk.data.location}</p>
+                            <p>{talk.data.date.toLocaleDateString()}</p>
+                        </div>
+                        <a href={talk.data.videoUrl} target="_blank" rel="noopener noreferrer">
+                            Watch Talk
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </main>
+</Layout>

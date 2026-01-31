@@ -1,0 +1,26 @@
+---
+import type { BorderSize, Space } from '../types/space'
+
+interface Props {
+    padding?: Space
+    borderSize?: BorderSize
+}
+
+const { padding = '1', borderSize = '5' } = Astro.props
+const paddingStyle = `var(--space-${padding}, var(--space-0, 1.5rem))`
+const borderSizeStyle = `var(--border-size-${borderSize}, var(--border-size-1, 1px))`
+---
+
+<div class="box">
+    <slot />
+</div>
+
+<style define:vars={{ padding: paddingStyle, borderWidth: borderSizeStyle }}>
+    .box {
+        display: block;
+        padding: var(--padding);
+        background-color: inherit;
+        border: solid;
+        border-width: var(--borderWidth);
+    }
+</style>

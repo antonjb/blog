@@ -1,0 +1,87 @@
+---
+import Stack from './stack.astro'
+
+interface Props {
+    element?: 'article' | 'div' | 'section'
+}
+
+const { element = 'article' } = Astro.props
+---
+
+<div class="prose">
+    <Stack element={element} space="1">
+        <slot />
+    </Stack>
+</div>
+
+
+<style>
+    .prose {
+        margin-block-end: var(--space-2);
+        
+        :is(h1, h2, h3, h4, h5, h6) {
+            margin-block-start: var(--space-2);
+
+            & + * {
+                margin-block-start: 0.5rem;
+            }
+        }
+
+        & :is(ul, ol) {
+            padding-inline-start: var(--space-2);
+        }
+
+        & ul {
+            list-style-type: disc;
+        }
+
+        & ol {
+            list-style-type: decimal;
+        }
+
+        & li {
+            margin-block: calc(var(--space-1) / 2);
+        }
+
+        & li::marker {
+            color: var(--color-primary);
+        }
+
+        & :not(pre) > code {
+            background-color: rgb(0 0 0 / 0.1);
+            padding-inline: 0.25em;
+            padding-block: 0.125em;
+            border-radius: 0.25em;
+            font-size: 0.9em;
+        }
+
+        /* Code blocks */
+        & pre {
+            margin-block: var(--space-1);
+            padding: var(--space-1);
+            overflow-x: auto;
+            border-radius: 0.5em;
+        }
+
+        /* Blockquotes */
+        & blockquote {
+            margin-block: var(--space-1);
+            margin-inline: 0;
+            padding-inline-start: var(--space-1);
+            border-inline-start: var(--border-size-3) solid var(--color-primary);
+            font-style: italic;
+        }
+
+        img {
+            margin-inline: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        video {
+            inline-size: 100%;
+            block-size: auto;
+            aspect-ratio: 16 / 9;
+        }
+    }
+</style>

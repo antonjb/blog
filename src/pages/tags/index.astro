@@ -1,0 +1,28 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+const tags = await getCollection('posts')
+const tagSet = new Set(tags.flatMap(tag => tag.data.tags))
+
+const tagArray = Array.from(tagSet).map(tag => ({
+    params: { tag: tag.toLowerCase() },
+})).sort((a, b) => a.params.tag.localeCompare(b.params.tag))
+
+console.log(tagSet)
+console.log(tagArray)
+
+---
+
+<Layout title="Tags">
+    <main>
+        <h1>Tags</h1>
+        <ul>
+            {tagArray.map(({ params: { tag } }) => (
+                <li>
+                    <a href={`/tags/${tag.toLowerCase()}`}>{tag}</a>
+                </li>
+            ))}
+        </ul>
+    </main>
+</Layout>
