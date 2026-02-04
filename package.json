@@ -5,6 +5,7 @@
   "author": "Anton Ball",
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
+    "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.16.10",
     "remark": "15.0.1",
     "strip-markdown": "6.0.0"
