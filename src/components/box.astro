@@ -16,11 +16,13 @@ const borderSizeStyle = `var(--border-size-${borderSize}, var(--border-size-1, 1
 </div>
 
 <style define:vars={{ padding: paddingStyle, borderWidth: borderSizeStyle }}>
-    .box {
-        display: block;
-        padding: var(--padding);
-        background-color: inherit;
-        border: solid;
-        border-width: var(--borderWidth);
+    @layer components {
+        .box {
+            display: block;
+            padding: var(--padding);
+            background-color: inherit;
+            border: solid;
+            border-width: var(--borderWidth);
+        }
     }
 </style>

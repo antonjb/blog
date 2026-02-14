@@ -12,12 +12,6 @@ interface Props {
 const { recursive = false, element: Element = 'div', space, class: className } = Astro.props
 ---
 
-<!-- 
-    Typically you would use Astro's define:vars to set the space variable 
-    but that isn't supported with dynamic tags. Instead the value is passed inline
-    If that ever changes, change this to use define:vars on the style tag.
-    see: https://docs.astro.build/en/reference/astro-syntax/#dynamic-tags
--->
 <Element
     class:list={['stack', { recursive }, className]}
     style={`--space: var(--space-${space}, var(--space-0, 1.5rem));`}
@@ -26,26 +20,28 @@ const { recursive = false, element: Element = 'div', space, class: className } =
 </Element>
 
 <style>
-    .stack {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        background-color: var(--background-color);
-        color: var(--foreground-color);
-    }
+    @layer components {
+        .stack {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: var(--background-color);
+            color: var(--foreground-color);
+        }
 
-    .stack :global(> *) {
-        margin-block: 0;
-    }
+        .stack > * {
+            margin-block: 0;
+        }
 
-    .stack :global(> * + *),
-    .stack.recursive :global(* + *) {
-        margin-block-start: var(--space, var(--space-0, 1.5rem));
-    }
+        .stack > * + *,
+        .stack.recursive * + * {
+            margin-block-start: var(--space, var(--space-0, 1.5rem));
+        }
 
-    /* Todo: make this dynamic for all space custom properties */
-    .stack-exception,
-    .stack-exception + * {
-        --space: var(--space-3);
+        /* Todo: make this dynamic for all space custom properties */
+        .stack-exception,
+        .stack-exception + * {
+            --space: var(--space-3);
+        }
     }
 </style>
