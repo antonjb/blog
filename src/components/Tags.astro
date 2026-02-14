@@ -26,27 +26,28 @@ function kebabCase(str: string): string {
 }
 
 <style>
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+    @layer components {
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-    .tags a {
-        display: block;
-        padding: 0.3rem 1rem;
-        background-color: #eee;
-        border-radius: 0.5rem;
-        color: inherit;
-        font-size: 0.85rem;
-        text-decoration: none;
-    }
+        .tags a {
+            padding: 0.3rem 1rem;
+            background-color: #eee;
+            border-radius: 0.5rem;
+            color: inherit;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
 
-    .tags a:hover {
-        background-color: var(--color-primary);
-        transition: background-color 0.2s linear;
+        .tags a:hover {
+            background-color: var(--color-primary);
+            transition: background-color 0.2s linear;
+        }
     }
 </style>

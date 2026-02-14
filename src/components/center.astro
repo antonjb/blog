@@ -21,21 +21,23 @@ const guttersStyle = `var(--space-${gutters}, var(--space-0, 0))`
 </div>
 
 <style define:vars={{ max, gutters: guttersStyle }}>
-    .center {
-        display: block;
-        box-sizing: content-box;
-        margin-inline: auto;
-        max-inline-size: var(--max, var(--measure));
-        padding-inline: var(--gutters);
-    }
+    @layer components {
+        .center {
+            display: block;
+            box-sizing: content-box;
+            margin-inline: auto;
+            max-inline-size: var(--max, var(--measure));
+            padding-inline: var(--gutters);
+        }
 
-    .center-text {
-        text-align: center;
-    }
+        .center-text {
+            text-align: center;
+        }
 
-    .center-intrinsic {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        .center-intrinsic {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 </style>

@@ -35,36 +35,36 @@ const gapStyle = `var(--space-${gap}, var(--space-0, 0))`
 </div>
 
 <style define:vars={{ gap: gapStyle, sideWidth, contentMin }}>
-    .sidebar {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--gap);
+    @layer components {
+        .sidebar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
 
-        & > :global(*) {
-            outline: 1px solid red;
-
-            flex-grow: 1;
-            flex-basis: var(--sideWidth);
+            & > :global(*) {
+                flex-grow: 1;
+                flex-basis: var(--sideWidth);
+            }
         }
-    }
 
-    .sidebar-left {
-        & > :global(*:last-child) {
-            flex-basis: 0;
-            flex-grow: 999;
-            min-inline-size: var(--contentMin);
+        .sidebar-left {
+            & > :global(*:last-child) {
+                flex-basis: 0;
+                flex-grow: 999;
+                min-inline-size: var(--contentMin);
+            }
         }
-    }
 
-    .sidebar-right {
-        & > :global(*:first-child) {
-            flex-basis: 0;
-            flex-grow: 999;
-            min-inline-size: var(--contentMin);
+        .sidebar-right {
+            & > :global(*:first-child) {
+                flex-basis: 0;
+                flex-grow: 999;
+                min-inline-size: var(--contentMin);
+            }
         }
-    }
 
-    .noStretch {
-        align-items: flex-start;
+        .noStretch {
+            align-items: flex-start;
+        }
     }
 </style>

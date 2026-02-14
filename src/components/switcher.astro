@@ -13,14 +13,16 @@ const spaceStyle = `var(--space-${space}, var(--space-0, 0))`
 <div class="switcher"><slot /></div>
 
 <style define:vars={{ space: spaceStyle, measure }}>
-    .switcher {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space);
+    @layer components {
+        .switcher {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space);
 
-        & > :global(*) {
-            flex-basis: calc((var(--measure) - 100%) * 999);
-            flex-grow: 1;
+            & > :global(*) {
+                flex-basis: calc((var(--measure) - 100%) * 999);
+                flex-grow: 1;
+            }
         }
     }
 </style>

@@ -13,10 +13,21 @@ interface Props {
 const { frontmatter } = Astro.props
 ---
 
-<Layout title={frontmatter.title} description={frontmatter.description} publishedDate={frontmatter.date} tags={frontmatter.tags}>
+<Layout
+    title={frontmatter.title}
+    description={frontmatter.description}
+    publishedDate={frontmatter.date}
+    tags={frontmatter.tags}
+>
     {
         frontmatter.heroImage ? (
-            <Image src={frontmatter.heroImage} alt="" loading="eager" densities={[1, 2]} class="hero-image" />
+            <Image
+                src={frontmatter.heroImage}
+                alt=""
+                loading="eager"
+                densities={[1, 2]}
+                class="hero-image"
+            />
         ) : null
     }
     <main>
@@ -25,26 +36,27 @@ const { frontmatter } = Astro.props
             <slot />
         </Prose>
         {frontmatter.tags && <Tags tags={frontmatter.tags} />}
-
     </main>
 </Layout>
 
 <style>
-    main {
-        margin-block-end: var(--space-2);
-    }
+    @layer base {
+        main {
+            margin-block-end: var(--space-2);
+        }
 
-    h1 {
-        margin-block-end: var(--space-1);
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
+        h1 {
+            margin-block-end: var(--space-1);
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
 
-    .hero-image {
-        grid-column: overflow;
-        inline-size: 100%;
-        block-size: auto;
-        object-fit: cover;
-        object-position: center;
+        .hero-image {
+            grid-column: overflow;
+            inline-size: 100%;
+            block-size: auto;
+            object-fit: cover;
+            object-position: center;
+        }
     }
 </style>
