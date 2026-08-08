@@ -9,9 +9,6 @@ const tagArray = Array.from(tagSet).map(tag => ({
     params: { tag: tag.toLowerCase() },
 })).sort((a, b) => a.params.tag.localeCompare(b.params.tag))
 
-console.log(tagSet)
-console.log(tagArray)
-
 ---
 
 <Layout title="Tags">
