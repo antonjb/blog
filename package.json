@@ -2,6 +2,7 @@
   "name": "anton-blog",
   "description": "antonball.dev blog code",
   "version": "2.0.0",
+  "packageManager": "pnpm@12.16.1",
   "author": "Anton Ball",
   "dependencies": {
     "@astrojs/mdx": "7.0.5",
