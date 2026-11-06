@@ -23,5 +23,6 @@
         --border-size-5: 25px;
     
         --color-primary: oklch(0.6943 0.1858 49.16);
+        --color-white: oklch(1 0 0);
     }
 }

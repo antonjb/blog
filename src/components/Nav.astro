@@ -1,0 +1,87 @@
+---
+import Logo from '../assets/logo.svg'
+import Cluster from './cluster.astro'
+
+interface Props {
+    siteTitle: string
+}
+
+const { siteTitle } = Astro.props
+---
+
+<nav>
+    <Cluster justify="space-between" align="center" space="1">
+        <a class="logo" href="/" aria-label={siteTitle}>
+            <Logo aria-hidden="true" />
+        </a>
+        <Cluster element="ul" role="list" justify="center" align="center" space="1">
+            <li><a href="/">Blog</a></li>
+            <li><a href="/talks/">Presentations</a></li>
+        </Cluster>
+    </Cluster>
+</nav>
+
+<style>
+    @layer layout {
+        nav {
+            container: site-nav / inline-size;
+            position: sticky;
+            inset-block-start: var(--space-1);
+            z-index: 1;
+            display: block;
+            grid-column: overflow;
+            justify-self: center;
+            inline-size: min(100%, max(80dvi, 40rem));
+            margin-block: var(--space-1) var(--space-2);
+            padding: 0.75rem clamp(1rem, 3vw, 2rem);
+            border-radius: 999px;
+            corner-shape: squircle;
+            box-shadow: 0 4px 24px rgb(0 0 0 / 0.08);
+            background-color: var(--color-white);
+        }
+
+        @container site-nav (inline-size < 26rem) {
+            nav > .cluster {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li a {
+            display: inline-block;
+            padding-block: 0.5rem;
+            color: inherit;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover,
+            &:focus-visible {
+                color: var(--color-primary);
+            }
+        }
+
+        .logo {
+            display: block;
+            inline-size: clamp(10rem, 20vw, 14rem);
+            max-inline-size: 100%;
+            fill: #000;
+            transition: fill 0.1s linear;
+        }
+
+        .logo :global(svg) {
+            display: block;
+            inline-size: 100%;
+            block-size: auto;
+        }
+
+        .logo:hover,
+        .logo:focus-visible {
+            fill: var(--color-primary);
+        }
+    }
+</style>

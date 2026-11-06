@@ -1,9 +1,9 @@
 ---
 import type { Property } from 'csstype'
 import type { Space } from '../types/space'
-import type { HTMLTag } from 'astro/types'
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
 
-interface Props {
+type Props = HTMLAttributes<HTMLTag> & {
     justify?: Property.JustifyContent
     align?: Property.AlignItems
     space?: Space
@@ -15,12 +15,18 @@ const {
     align = 'flex-start',
     space: spaceStyle = '1',
     element: Element = 'div',
+    class: className,
+    ...rest
 } = Astro.props
 
 const space = `var(--space-${spaceStyle}, var(--space-1, 1rem))`
 ---
 
-<Element class="cluster" style={`--justify: ${justify}; --align: ${align}; --space: ${space};`}>
+<Element
+    style={`--justify: ${justify}; --align: ${align}; --space: ${space};`}
+    {...rest}
+    class:list={['cluster', className]}
+>
     <slot />
 </Element>
 
